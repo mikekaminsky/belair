@@ -1,5 +1,5 @@
-belAir.controller('AdminController', ['$http', '$scope', function($http, $scope) {
-  $http.get('/api/shows').then(function (response) {
+belAir.controller('AdminController', ['Shows', '$scope', function(Shows, $scope) {
+  Shows.index().then(function (response) {
     $scope.shows = response.data.shows;
   });
 }]);
