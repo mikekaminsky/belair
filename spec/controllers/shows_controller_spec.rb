@@ -17,4 +17,17 @@ describe ShowsController, type: :controller do
       }.by(+1)
     end
   end
+
+  describe "#update" do
+    let(:show) { show_factory }
+    let(:show_params) { {id: show.id, show: {name: 'Crazy Stallions'}} }
+
+    it "increases the number of shows" do
+      expect {
+        patch :update, show_params
+      }.to change {
+        show.reload.name
+      }.to('Crazy Stallions')
+    end
+  end
 end

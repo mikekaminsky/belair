@@ -7,6 +7,10 @@ belAir.factory('Shows', ['$http', function ($http) {
     },
     show: function (id) {
       return $http.get(url + id);
+    },
+    update: function (id, show) {
+      var updateURL = url + id;
+      return $http.patch(updateURL, show);
     }
   };
 

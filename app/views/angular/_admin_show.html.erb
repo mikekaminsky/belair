@@ -1,4 +1,4 @@
-<h1>Edit Show:</h1>
+<h1>Edit Show:{{ show.name }}</h1>
 <form>
   <p>
     <label>Name</label>
@@ -7,6 +7,13 @@
   <p>
     <label>Image URL</label>
     <input ng-model="show.image_url"/>
+    <br/>
+    <img ng-src="{{ show.image_url }}"/>
   <p/>
+  <button ng-click="saveShow()">Save!</button>
 </form>
+
+
+
+
 <a ng-href="/#/admin"><h5>Admin Home</h5></a>

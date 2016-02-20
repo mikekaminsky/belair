@@ -18,6 +18,16 @@ class ShowsController < ApplicationController
     render json: Show.find_by(id: params[:id])
   end
 
+  def update
+    show = Show.find_by(id: params[:id])
+
+    if show.update_attributes(allowed_show_params)
+      render json: show
+    else
+      render json: {errors: show.errors.full_messages}
+    end
+  end
+
 
   private
 
