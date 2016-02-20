@@ -4,7 +4,10 @@ belAir.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
   $routeProvider.when('/', {
     controller: 'HomeController',
     templateUrl: 'home.html'
-  }).otherwise({ redirectTo: '/'});
+  }).when('/shows/:id', {
+    controller: 'ShowController',
+    templateUrl: 'show.html'
+  }).otherwise({ redirectTo: '/blah'});
 }]);
 
 belAir.run(function () {

@@ -14,6 +14,10 @@ class ShowsController < ApplicationController
     render json: Show.all
   end
 
+  def show
+    render json: Show.find_by(id: params[:id])
+  end
+
 
   private
 
