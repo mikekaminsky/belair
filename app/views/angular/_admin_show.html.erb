@@ -16,7 +16,9 @@
   <button ng-click="saveShow()">Save!</button>
 </form>
 
-
-
+<a ng-href="/#/admin/show/{{show.id}}/episodes/new"><h3>Add New Episode</h3></a>
+<div ng-repeat="episode in show.episodes">
+  <p><h3>{{episode.name}}</h3></p>
+</div>
 
 <a ng-href="/#/admin"><h5>Admin Home</h5></a>
