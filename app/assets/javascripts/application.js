@@ -11,4 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require angular
+//= require angular-route
+//= require belair
+//= require_tree ./controllers
 //= require_tree .

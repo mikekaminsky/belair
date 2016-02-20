@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'angularjs-rails'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.2.5.1'
