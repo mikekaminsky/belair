@@ -4,7 +4,7 @@ describe ShowsController, type: :controller do
       {show:
         {
           name: Faker::Company.buzzword,
-          image_link: Faker::Internet.domain_name
+          image_url: Faker::Internet.domain_name
         }
       }
     end

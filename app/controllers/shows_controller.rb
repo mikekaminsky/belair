@@ -22,7 +22,7 @@ class ShowsController < ApplicationController
   private
 
   def allowed_show_params
-    params.require(:show).permit(:name, :image_link)
+    params.require(:show).permit(:name, :image_url)
   end
 
 end
