@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.2.5.1'
 gem 'sass-rails', '~> 5.0'
+gem 'uglifier'
 
 group :development, :test do
   gem 'byebug'
@@ -17,4 +18,8 @@ end
 group :development do
   gem 'spring'
   gem 'web-console', '~> 2.0'
+end
+
+group :production, :staging do
+  gem 'rails_12factor'
 end
