@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'active_model_serializers'
 gem 'angularjs-rails'
+gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.2.5.1'
