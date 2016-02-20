@@ -11,6 +11,9 @@ belAir.factory('Shows', ['$http', function ($http) {
     update: function (id, show) {
       var updateURL = url + id;
       return $http.patch(updateURL, show);
+    },
+    create: function (show) {
+      return $http.post(url, show);
     }
   };
 
