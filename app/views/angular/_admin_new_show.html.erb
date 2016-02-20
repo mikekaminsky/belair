@@ -1,0 +1,20 @@
+<h1>Create New Show</h1>
+<p ng-repeat="error in errors" style="color: red;">
+  {{ error }}
+</p>
+<form>
+  <p>
+    <label>Name</label>
+    <input ng-model="show.name"/>
+  <p/>
+  <p>
+    <label>Image URL</label>
+    <input ng-model="show.image_url"/>
+    <br/>
+    <img ng-src="{{ show.image_url }}"/>
+  <p/>
+  <button ng-click="saveShow()">Save!</button>
+</form>
+
+
+<a ng-href="/#/admin"><h5>Admin Home</h5></a>
