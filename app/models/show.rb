@@ -1,6 +1,6 @@
 class Show < ActiveRecord::Base
   
   validates :name, presence: true
-  validates :image_url, presence: true
+  validates :image_link, presence: true
 
 end
