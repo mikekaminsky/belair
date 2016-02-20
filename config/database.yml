@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: bel_air_development
+
+test:
+  <<: *default
+  database: bel_air_test
+
+production:
+  <<: *default
+  database: bel_air_production
