@@ -1,4 +1,8 @@
 describe ShowsController, type: :controller do
+  before do
+    request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(ENV['ADMIN_USER'], ENV['ADMIN_PASSWORD'])
+  end
+
   describe "#create" do
     let(:show_params) do
       {show:
