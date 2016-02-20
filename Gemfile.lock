@@ -131,6 +131,7 @@ GEM
     tilt (2.0.2)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    valid_attribute (2.0.0)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -150,6 +151,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   spring
+  valid_attribute
   web-console (~> 2.0)
 
 BUNDLED WITH
