@@ -3,10 +3,10 @@ belAir.controller('ShowController', ['$http', '$location', '$routeParams', '$sco
     var url = '/api/shows/' + $routeParams.id;
 
     $http.get(url).then(function (response) {
-      if (response.data) {
-        $scope.show = response.data;
+      if (response.data.show) {
+        $scope.show = response.data.show;
       } else {
         $location.path('/').replace();
       }
-    })
+    });
 }]);

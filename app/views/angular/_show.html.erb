@@ -1,3 +1,6 @@
 <h1>{{show.name}}</h1>
 <img ng-src="{{ show.image_url }}"/>
+<div ng-repeat="episode in show.episodes">
+  <p><h3>{{episode.name}}</h3></p>
+</div>
 <a ng-href="/#/"><h5>Home</h5></a>
