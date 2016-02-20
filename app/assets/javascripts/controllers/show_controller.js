@@ -1,6 +1,6 @@
 belAir.controller('ShowController', ['$http', '$location', '$routeParams', '$scope',
   function($http, $location, $routeParams, $scope) {
-    var url = '/shows/' + $routeParams.id;
+    var url = '/api/shows/' + $routeParams.id;
 
     $http.get(url).then(function (response) {
       if (response.data) {

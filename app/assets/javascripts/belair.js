@@ -7,7 +7,7 @@ belAir.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
   }).when('/shows/:id', {
     controller: 'ShowController',
     templateUrl: 'show.html'
-  }).otherwise({ redirectTo: '/blah'});
+  }).otherwise({ redirectTo: '/'});
 }]);
 
 belAir.run(function () {

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'application#home'
 
-  resources :shows, only: [:create, :index, :show]
+  scope path: :api do
+    resources :shows, only: [:create, :index, :show], path: 'shows'
+  end
 end
