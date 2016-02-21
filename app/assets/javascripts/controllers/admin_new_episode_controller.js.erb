@@ -1,0 +1,40 @@
+belAir.controller('AdminNewEpisodeController', ['Attachments', 'Episodes', 'Shows', '$location', '$routeParams', '$scope', '$http',
+  function(Attachments, Episodes, Shows, $location, $routeParams, $scope, $http) {
+
+  var showID = $routeParams.showID;
+  $scope.episode = {
+    show_id: showID
+  };
+
+  Shows.show(showID).then(function (response) {
+    $scope.show = response.data.show;
+  });
+
+  $scope.saveEpisode = function saveEpisode() {
+    Episodes.create($scope.episode).then(function (response) {
+      if (response.data.errors) {
+        $scope.errors = response.data.errors
+      } else {
+        $location.path('/admin/show/' + showID).replace();
+      }
+    });
+  }
+
+  $scope.fileSelected = function fileSelected(file) {
+    if (file) {
+      $scope.fileUpload = {name: file.name, percentage: 0};
+
+      Attachments.create(file, {
+        progress: function (event) {
+          var percentage = 100.0 * event.loaded / event.total;
+          $scope.fileUpload.percentage = parseInt(percentage);
+        },
+        success: function(uploadPath, s3Config) {
+          $scope.episode.file_url = s3Config.url + uploadPath;
+          $scope.fileName = $scope.fileUpload.name;
+          $scope.fileUpload = undefined;
+        }
+      });
+    }
+  };
+}]);
