@@ -1,4 +1,4 @@
-belAir = angular.module('belAir', ['ngRoute']);
+belAir = angular.module('belAir', ['ngRoute', 'ngFileUpload']);
 
 belAir.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   $routeProvider.when('/', {

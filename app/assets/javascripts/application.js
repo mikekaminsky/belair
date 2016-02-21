@@ -13,6 +13,7 @@
 //= require jquery
 //= require angular
 //= require angular-route
+//= require ng-file-upload
 //= require belair
 //= require_tree ./controllers
 //= require_tree .

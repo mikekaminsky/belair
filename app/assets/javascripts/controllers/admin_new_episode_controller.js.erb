@@ -1,0 +1,50 @@
+belAir.controller('AdminNewEpisodeController', ['Episodes', 'Shows', 'Upload', '$location', '$routeParams', '$scope', '$http',
+  function(Episodes, Shows, Upload, $location, $routeParams, $scope, $http) {
+    var showID = $routeParams.showID;
+    $scope.episode = {
+      show_id: showID
+    };
+
+    Shows.show(showID).then(function (response) {
+      $scope.show = response.data.show;
+    });
+
+    $scope.saveEpisode = function saveEpisode() {
+      Episodes.create($scope.episode).then(function (response) {
+        if (response.data.errors) {
+          $scope.errors = response.data.errors
+        } else {
+          $location.path('/admin/show/' + showID).replace();
+        }
+      });
+    }
+
+    $scope.upload = function(file) {
+      $http.put('https://belair-radio.s3-website-us-east-1.amazonaws.com/', file).then(function () {
+        debugger
+      }).catch(function () {
+        debugger
+      });
+    //  Upload.upload({
+    //          url: 'https://belair-radio.s3-website-us-east-1.amazonaws.com/',
+    //          method: 'POST',
+    //          data: {
+    //            key: 'here.mp3', // the key to store the file on S3, could be file name or customized
+    //            AWSAccessKeyId: null,
+    //            acl: 'public-read', // sets the access to the uploaded file in the bucket: private, public-read, ...
+    //            <%#policy: $scope.policy, // base64-encoded json policy (see article below)%>
+    //            <%#signature: $scope.signature, // base64-encoded signature based on policy string (see article below)%>
+    //            "Content-Type": file.type != '' ? file.type : 'application/octet-stream', // content type of the file (NotEmpty)
+    //            filename: file.name, // this is needed for Flash polyfill IE8-9
+    //            file: file
+    //            }
+    //      }).then(function (resp) {
+    //          console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+    //      }, function (resp) {
+    //          console.log('Error status: ' + resp.status);
+    //      }, function (evt) {
+    //          var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+    //          console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+    //      });
+    };
+}]);
