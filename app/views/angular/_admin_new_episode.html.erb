@@ -8,9 +8,12 @@
     <input ng-model="episode.name"/>
   <p/>
   <p>
-    <label>File URL</label>
-    <input ng-model="episode.file_url"/>
-    <div ngf-select="upload($file)">Upload File On Select</div>
+    <button ng-hide="fileUpload" ngf-select="fileSelected($file)">
+      {{ fileName || episode.file_url || "Choose File"}}
+    </button>
+    <span ng-show="fileUpload">
+      Upload progress: {{ fileUpload.percentage }}%
+    </span>
   <p/>
   <button ng-click="saveEpisode()">Save!</button>
 </form>

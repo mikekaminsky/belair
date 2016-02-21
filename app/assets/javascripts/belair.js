@@ -21,6 +21,3 @@ belAir.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
     templateUrl: 'admin_show.html'
   }).otherwise({ redirectTo: '/'});
 }]);
-
-belAir.run(function () {
-});
