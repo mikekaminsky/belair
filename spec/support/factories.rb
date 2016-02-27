@@ -4,3 +4,10 @@ def show_factory(options = {})
     image_url: Faker::Internet.domain_name
   }.merge(options))
 end
+def episode_factory(options = {})
+  Episode.create({
+    show_id: 1,
+    name: Faker::Company.buzzword,
+    file_url: Faker::Internet.domain_name
+  }.merge(options))
+end

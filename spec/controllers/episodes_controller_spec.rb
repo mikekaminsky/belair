@@ -21,4 +21,19 @@ describe EpisodesController, type: :controller do
     end
   end
 
+
+  describe "#update" do
+    let(:episode) { episode_factory }
+    let(:episode_params) { {id: episode.id, episode: {name: 'Show the First'}} }
+
+    it "changes the name of a show" do
+      expect {
+        patch :update, episode_params
+      }.to change {
+        episode.reload.name
+      }.to('Show the First')
+    end
+  end
+
+
 end
