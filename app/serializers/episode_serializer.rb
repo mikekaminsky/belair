@@ -1,3 +1,3 @@
 class EpisodeSerializer < ActiveModel::Serializer
-  attributes :name, :file_url
+  attributes :id, :name, :file_url
 end

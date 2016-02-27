@@ -1,0 +1,17 @@
+<h1>Edit Episode: {{ episode.name }}</h1>
+<p ng-repeat="error in errors" style="color: red;">
+  {{ error }}
+</p>
+<form>
+  <p>
+    <label>Name</label>
+    <input ng-model="episode.name"/>
+  <p/>
+  <p>
+    <label>File URL</label>
+    <input ng-model="episode.file_url"/>
+  <p/>
+  <button ng-click="saveEpisode()">Save!</button>
+</form>
+
+<a ng-href="/#/admin"><h5>Admin Home</h5></a>

@@ -19,5 +19,8 @@ belAir.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
   }).when('/admin/show/:id', {
     controller: 'AdminShowController',
     templateUrl: 'admin_show.html'
+  }).when('/admin/show/:showID/episodes/:episodeID', {
+    controller: 'AdminEpisodeController',
+    templateUrl: 'admin_episode.html'
   }).otherwise({ redirectTo: '/'});
 }]);
