@@ -26,7 +26,7 @@ describe ShowsController, type: :controller do
     let(:show) { show_factory }
     let(:show_params) { {id: show.id, show: {name: 'Crazy Stallions'}} }
 
-    it "increases the number of shows" do
+    it "changes the name of a show" do
       expect {
         patch :update, show_params
       }.to change {
