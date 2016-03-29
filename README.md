@@ -1,5 +1,8 @@
 # Bel Air
 
+### Involved:
+If you want to contribute, check out the issues section on github.
+
 ### Getting Started:
 
 Install the things:
@@ -29,12 +32,6 @@ And then you can run the app with:
 
 Navigate your browser to http://localhost:3000/#/
 
-###ToDo:
-  * [ ] Improve home index to only load the title and images rather than all of the episodes as well
-  * [ ] Allow admins to edit/update episodes
-  * [ ] Allow admins to delete shows and episodes
-  * [ ] Add ability to add genres (metadata hstore thing?)
-  * [ ] Add audio player (a la soundcloud?)
 
 
 
