@@ -1,7 +1,12 @@
 <h1>BelAir</h1>
 <div class="shows">
 	<div class="show" ng-repeat="show in shows">
-	  <a ng-href="/#/shows/{{show.id}}"><h1>{{show.name}}</h1></a>
-	  <img ng-src="{{ show.image_url }}"/>
+		<div class="img-container">
+			<img ng-src="{{ show.image_url }}"/>
+		</div>
+		<div class="info-container">
+			<a ng-href="/#/shows/{{show.id}}"><h2>{{show.name}}</h2></a>
+			<div class="show-description">{{ !!show.description ? show.description : 'omg wtf lol hai' }}</div>
+		</div>
 	</div>
 </div>

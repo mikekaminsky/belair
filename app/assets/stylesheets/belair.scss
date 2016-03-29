@@ -8,13 +8,22 @@ $grey: #b0b0b0;
 }
 
 .show {
+	display: -webkit-flex;
+	display: flex;
 	padding: 1em;
 	border: 2px solid black;
-	background: $pink;
-	&:nth-child(2n+3) {
+	&:nth-child(3n+1) {
+		background: $pink;
+	}
+	&:nth-child(3n+2) {
 		background: $green;
 	}
 	&:nth-child(3n+3) {
 		background: $grey;
+	}
+
+	.info-container {
+		padding: 1em;
+		background: white;
 	}
 }
