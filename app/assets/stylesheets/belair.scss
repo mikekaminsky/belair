@@ -1,0 +1,20 @@
+// standard variables
+$pink: #f4447b;
+$green: #a2e95a;
+$grey: #b0b0b0;
+
+.shows {
+	width: 100%;
+}
+
+.show {
+	padding: 1em;
+	border: 2px solid black;
+	background: $pink;
+	&:nth-child(2n+3) {
+		background: $green;
+	}
+	&:nth-child(3n+3) {
+		background: $grey;
+	}
+}

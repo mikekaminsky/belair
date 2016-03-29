@@ -74,6 +74,7 @@ GEM
     minitest (5.8.4)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    normalize-rails (4.0.0)
     pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -166,6 +167,7 @@ DEPENDENCIES
   faker
   font-awesome-sass (~> 4.5.0)
   jquery-rails
+  normalize-rails
   pg
   rails (= 4.2.5.1)
   rails_12factor
