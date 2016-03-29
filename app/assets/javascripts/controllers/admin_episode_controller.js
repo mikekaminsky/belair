@@ -28,6 +28,17 @@ belAir.controller('AdminEpisodeController', ['Attachments', 'Episodes', 'Shows',
         }
       });
     }
+
+    $scope.deleteEpisode = function deleteEpisode() {
+      Episodes.delete(episodeID, $scope.episode).then(function (response) {
+        if (response.data.errors) {
+          $scope.errors = response.data.errors
+        } else {
+          $location.path('/admin/show/' + showID).replace();
+        }
+      });
+    }
+
     $scope.fileSelected = function fileSelected(file) {
         if (file) {
           $scope.fileUpload = {name: file.name, percentage: 0};
