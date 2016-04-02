@@ -1,5 +1,5 @@
 class ShowsController < ApplicationController
-  http_basic_authenticate_with name: ENV['ADMIN_USER'], password: ENV['ADMIN_PASSWORD'], only: ['update', 'create']
+  http_basic_authenticate_with name: ENV['ADMIN_USER'], password: ENV['ADMIN_PASSWORD'], only: ['update', 'create', 'delete']
 
   def create
     show = Show.new allowed_show_params
