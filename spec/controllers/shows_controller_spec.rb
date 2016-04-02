@@ -8,7 +8,8 @@ describe ShowsController, type: :controller do
       {show:
         {
           name: Faker::Company.buzzword,
-          image_url: Faker::Internet.domain_name
+          image_url: Faker::Internet.domain_name,
+          description: Faker::Hipster.sentence
         }
       }
     end
