@@ -1,6 +1,6 @@
 # Bel Air
 
-### Involved:
+### Getting Involved:
 If you want to contribute, check out the issues section on github.
 
 ### Getting Started:
