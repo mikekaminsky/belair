@@ -18,4 +18,16 @@ belAir.controller('AdminShowController', ['Shows', '$location', '$routeParams', 
         }
       });
     }
+
+    $scope.deleteShow = function deleteShow() {
+      Shows.delete(id, $scope.show).then(function (response) {
+        if (response.data.errors) {
+          $scope.errors = response.data.errors
+        } else {
+          $location.path('/admin/').replace();
+        }
+      });
+    }
+
+
 }]);

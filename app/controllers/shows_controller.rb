@@ -29,6 +29,10 @@ class ShowsController < ApplicationController
     end
   end
 
+  def destroy
+    Show.find_by(id: params[:id]).destroy
+    render json: {success: true}
+  end
 
   private
 
