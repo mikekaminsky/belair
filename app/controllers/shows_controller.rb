@@ -1,5 +1,5 @@
 class ShowsController < ApplicationController
-  http_basic_authenticate_with name: ENV['ADMIN_USER'], password: ENV['ADMIN_PASSWORD'], only: ['update', 'create']
+  http_basic_authenticate_with name: ENV['ADMIN_USER'], password: ENV['ADMIN_PASSWORD'], only: ['update', 'create', 'delete']
 
   def create
     show = Show.new allowed_show_params
@@ -29,11 +29,15 @@ class ShowsController < ApplicationController
     end
   end
 
+  def destroy
+    Show.find_by(id: params[:id]).destroy
+    render json: {success: true}
+  end
 
   private
 
   def allowed_show_params
-    params.require(:show).permit(:name, :image_url)
+    params.require(:show).permit(:name, :image_url, :description)
   end
 
 end

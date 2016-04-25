@@ -11,6 +11,9 @@ belAir.factory('Episodes', ['$http', function ($http) {
     },
     create: function (episode) {
       return $http.post(url, episode);
+    },
+    delete: function (id, episode) {
+      return $http.delete(url + id);
     }
   };
 

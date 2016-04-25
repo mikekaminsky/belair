@@ -6,6 +6,8 @@
   <p>
     <label>Name</label>
     <input ng-model="show.name"/>
+    <label>Description</label>
+    <input ng-model="show.description"/>
   <p/>
   <p>
     <label>Image URL</label>
@@ -14,6 +16,7 @@
     <img ng-src="{{ show.image_url }}"/>
   <p/>
   <button ng-click="saveShow()">Save!</button>
+  <button ng-click="deleteShow()">Destroy!</button>
 </form>
 
 <a ng-href="/#/admin/show/{{show.id}}/episodes/new"><h3>Add New Episode</h3></a>

@@ -1,7 +1,8 @@
 def show_factory(options = {})
   Show.create({
     name: Faker::Company.buzzword,
-    image_url: Faker::Internet.domain_name
+    image_url: Faker::Internet.domain_name,
+    description: Faker::Company.catch_phrase 
   }.merge(options))
 end
 def episode_factory(options = {})

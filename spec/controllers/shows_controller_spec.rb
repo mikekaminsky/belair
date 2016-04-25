@@ -8,7 +8,8 @@ describe ShowsController, type: :controller do
       {show:
         {
           name: Faker::Company.buzzword,
-          image_url: Faker::Internet.domain_name
+          image_url: Faker::Internet.domain_name,
+          description: Faker::Hipster.sentence
         }
       }
     end
@@ -34,4 +35,27 @@ describe ShowsController, type: :controller do
       }.to('Crazy Stallions')
     end
   end
+
+  describe "#destroy" do
+    let(:show_params) do
+      {show:
+        {
+          name: Faker::Company.buzzword,
+          image_url: Faker::Internet.domain_name,
+          description: Faker::Hipster.sentence
+        }
+      }
+    end
+
+    it "decreases the number of shows" do
+        post :create, show_params
+      expect {
+        show = Show.last
+        delete :destroy, id: show.id
+      }.to change {
+        Show.count
+      }.by(-1)
+    end
+  end
+
 end

@@ -1,4 +1,5 @@
 class EpisodesController < ApplicationController
+  http_basic_authenticate_with name: ENV['ADMIN_USER'], password: ENV['ADMIN_PASSWORD'], only: ['update', 'create', 'delete']
 
   def create
     episode = Episode.new(episode_params)
@@ -24,10 +25,15 @@ class EpisodesController < ApplicationController
     end
   end
 
+  def destroy
+    Episode.find_by(id: params[:id]).destroy
+    render json: {success: true}
+  end
+
   private
 
   def episode_params
-    params.require(:episode).permit(:name, :file_url, :show_id)
+    params.require(:episode).permit(:id, :name, :file_url, :show_id)
   end
 
 end
