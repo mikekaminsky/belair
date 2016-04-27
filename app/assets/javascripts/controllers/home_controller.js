@@ -1,8 +1,6 @@
-belAir.controller('HomeController', ['Shows', '$scope', '$http', 'AudioPlayer', function(Shows, $scope, $http, AudioPlayer) {
+belAir.controller('HomeController', ['Shows', 'AudioPlayer', '$scope', function(Shows, AudioPlayer, $scope) {
     Shows.index().then(function (response) {
       $scope.shows = response.data.shows;
-
-      console.log($scope.shows);
     });
 
   $scope.play = function play() {
