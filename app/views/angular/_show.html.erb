@@ -1,6 +1,7 @@
 <h1>{{show.name}}</h1>
 <img ng-src="{{ show.image_url }}"/>
 <div ng-repeat="episode in show.episodes">
-  <a ng-click="play(episode)"><h3>{{episode.name}}</h3></a>
+  <a ng-click="play(episode)"><h3>Play <strong>{{episode.name}}</strong></h3></a>
 </div>
 <a ng-href="/#/"><h5>Home</h5></a>
+

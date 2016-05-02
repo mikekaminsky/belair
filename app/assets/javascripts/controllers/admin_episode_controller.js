@@ -1,5 +1,5 @@
 belAir.controller('AdminEpisodeController', ['Attachments', 'Episodes', 'Shows', '$location', '$routeParams', '$scope',
-  function(Attachments, Episodes, Shows, $location, $routeParams, $scope, $http) {
+  function(Attachments, Episodes, Shows, $location, $routeParams, $scope) {
     var showID = $routeParams.showID;
     var episodeID = $routeParams.episodeID;
 

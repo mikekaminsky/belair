@@ -14,11 +14,7 @@
 //= require angular
 //= require angular-route
 //= require ng-file-upload
-//= require audiojs/audiojs/audio.min
+//= require mediaelement/build/mediaelement-and-player.min.js
 //= require belair
 //= require_tree ./controllers
 //= require_tree .
-
-audiojs.events.ready(function() {
-  audioJS = audiojs.createAll()[0];
-});

@@ -1,11 +1,9 @@
 belAir.service('AudioPlayer', [function AudioPlayerService() {
-  function audio() {
-    return $(audioJS.element);
-  }
+  this.player = new MediaElementPlayer('#audio-player', {});
 
   this.play = function play(url) {
-    audio().attr('src', url);
-    audioJS.play();
+    this.player.setSrc(url);
+    this.player.play();
   }
 
 }]);
