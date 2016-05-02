@@ -3,6 +3,30 @@ $pink: #f4447b;
 $green: #a2e95a;
 $grey: #b0b0b0;
 
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 0.5em 1em;
+	background: white;
+	height: 96px;
+	border-bottom: 1px solid black;
+	z-index: 100;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+}
+
+.content {
+	position: relative;
+	margin-top: 96px;
+	margin-bottom: 36px;
+}
+
 .shows {
 	width: 100%;
 }

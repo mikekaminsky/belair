@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="belAir">
-  <div ng-view></div>
+	<div ba-header></div>
+	<div class="content">
+	  <div ng-view></div>
+	</div>
+  <div ba-footer></div>
   <%= render 'layouts/angular_templates' %>
-  <audio id='audio-player'></audio>
 </body>
 </html>
