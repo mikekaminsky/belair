@@ -7,6 +7,9 @@ belAir.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
   }).when('/shows/:id', {
     controller: 'ShowController',
     templateUrl: 'show.html'
+  }).when('/about', {
+    controller: 'AboutController',
+    templateUrl: 'about.html'
   }).when('/admin', {
     controller: 'AdminController',
     templateUrl: 'admin.html'
