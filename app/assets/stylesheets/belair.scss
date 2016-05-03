@@ -113,3 +113,25 @@ $grey: #b0b0b0;
 		}
 	}
 }
+
+.about-page {
+	background: white;
+	text-align: center;
+
+	.about-img {
+		height: 24em;
+		background-size: cover;
+
+		&.about-img-1 {
+			background-image: url('http://41.media.tumblr.com/tumblr_m95lqq8cFq1qeflnoo1_1280.jpg');
+		}
+
+		&.about-img-2 {
+			background-image: url('http://wallpapercave.com/wp/eLeg8tg.png');
+		}
+
+		&.about-img-3 {
+			background-image: url('http://www.tacticalfanboy.com/wp-content/uploads/2011/03/hail-to-the-king-baby-duke-nukem-forever-wallpaper.jpg');
+		}
+	}
+}
