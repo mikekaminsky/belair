@@ -3,8 +3,24 @@ $pink: #f4447b;
 $green: #a2e95a;
 $grey: #b0b0b0;
 
-.shows {
-	width: 100%;
+* {
+	box-sizing: border-box !important;
+}
+
+
+.header {
+	min-height: 8.5em;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+}
+
+.content {
+	position: relative;
 }
 
 .show {
@@ -12,6 +28,44 @@ $grey: #b0b0b0;
 	display: flex;
 	padding: 1em;
 	border: 2px solid black;
+	overflow: hidden;
+
+	.show-img img {
+		width: 100%;
+		height: auto;
+	}
+
+	.show-info {
+		padding: 1em;
+		background: white;
+	}
+
+	&:first-child,
+	&:nth-child(3) {
+		.show-img {
+			width: 20%;
+			float: left;
+		}
+
+		.show-info {
+			float: left;
+			width: 80%;
+		}
+	}
+
+	&:nth-child(2) {
+		.show-img {
+			width: 20%;
+			float: right;
+		}
+
+		.show-info {
+			float: right;
+			width: 80%;
+		}
+	}
+
+
 	&:nth-child(3n+1) {
 		background: $pink;
 	}
@@ -21,9 +75,63 @@ $grey: #b0b0b0;
 	&:nth-child(3n+3) {
 		background: $grey;
 	}
+}
 
-	.info-container {
+.show-page-container {
+	background-size: cover;
+	width: 100%;
+	height: calc(100vh - 8.5em);
+	overflow: scroll;
+
+	.episode-list,
+	.show-name {
 		padding: 1em;
 		background: white;
+		border: 2px solid black;
+	}
+}
+
+.schedule-page {
+	background: $green;
+
+	.responsive-iframe-container {
+	    position: relative;
+	    margin: 1em;
+	    padding-bottom: 120%;
+	    padding-top: 30px;
+	    height: 0;
+	    overflow: auto;
+
+		iframe,  
+		object, 
+		embed {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		}
+	}
+}
+
+.about-page {
+	background: white;
+	text-align: center;
+
+	.about-img {
+		height: 24em;
+		background-size: cover;
+
+		&.about-img-1 {
+			background-image: url('http://41.media.tumblr.com/tumblr_m95lqq8cFq1qeflnoo1_1280.jpg');
+		}
+
+		&.about-img-2 {
+			background-image: url('http://wallpapercave.com/wp/eLeg8tg.png');
+		}
+
+		&.about-img-3 {
+			background-image: url('http://www.tacticalfanboy.com/wp-content/uploads/2011/03/hail-to-the-king-baby-duke-nukem-forever-wallpaper.jpg');
+		}
 	}
 }

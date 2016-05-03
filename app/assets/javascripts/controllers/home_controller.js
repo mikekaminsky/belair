@@ -1,9 +1,5 @@
-belAir.controller('HomeController', ['Shows', 'AudioPlayer', '$scope', function(Shows, AudioPlayer, $scope) {
-
-  Shows.index().then(function (response) {
-    $scope.shows = response.data.shows;
-  });
-
-  AudioPlayer.autoPlay();
-
+belAir.controller('HomeController', ['Shows', '$scope', function(Shows, $scope) {
+    Shows.index().then(function (response) {
+      $scope.shows = response.data.shows;
+    });
 }]);

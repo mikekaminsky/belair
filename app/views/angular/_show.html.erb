@@ -1,7 +1,14 @@
-<h1>{{show.name}}</h1>
-<img ng-src="{{ show.image_url }}"/>
-<div ng-repeat="episode in show.episodes">
-  <a ng-click="play(episode)"><h3>Play <strong>{{episode.name}}</strong></h3></a>
+<div class="container-fluid show-page-container" ng-style="{'background-image':'url(' + show.image_url + ')'}">
+	<div class="row">
+		<div class="episode-list col-md-4">
+			<div ng-repeat="episode in show.episodes">
+			  <a ng-click="play(episode)"><h3>Play <strong>{{episode.name}}</strong></h3></a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="show-name col-md-4 pull-right">
+			<h1>{{show.name}}</h1>
+		</div>
+	</div>
 </div>
-<a ng-href="/#/"><h5>Home</h5></a>
-

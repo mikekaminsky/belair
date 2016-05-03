@@ -7,9 +7,9 @@ gem 'httparty'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.2.5.1'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier'
-gem 'font-awesome-sass', '~> 4.5.0'
 gem 'normalize-rails'
 
 group :development, :test do
