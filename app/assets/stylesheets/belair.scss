@@ -7,15 +7,9 @@ $grey: #b0b0b0;
 	box-sizing: border-box !important;
 }
 
+
 .header {
-	// position: fixed;
-	// top: 0;
-	// left: 0;
-	// padding: 0.5em 1em;
-	// background: white;
-	// height: 96px;
-	// border-bottom: 1px solid black;
-	// z-index: 100;
+	min-height: 8.5em;
 }
 
 .footer {
@@ -27,8 +21,6 @@ $grey: #b0b0b0;
 
 .content {
 	position: relative;
-	margin-top: 69px;
-	margin-bottom: 36px;
 }
 
 .show {
@@ -36,16 +28,43 @@ $grey: #b0b0b0;
 	display: flex;
 	padding: 1em;
 	border: 2px solid black;
-	overflow: hidden;	
+	overflow: hidden;
 
-	// width: 33%;
-	// float: left;
+	.show-img img {
+		width: 100%;
+		height: auto;
+	}
 
-	// &:first-child,
-	// &:nth-child(2),
-	// &:nth-child(3) {
-	// 	width: 100%;
-	// }
+	.show-info {
+		padding: 1em;
+		background: white;
+	}
+
+	&:first-child,
+	&:nth-child(3) {
+		.show-img {
+			width: 20%;
+			float: left;
+		}
+
+		.show-info {
+			float: left;
+			width: 80%;
+		}
+	}
+
+	&:nth-child(2) {
+		.show-img {
+			width: 20%;
+			float: right;
+		}
+
+		.show-info {
+			float: right;
+			width: 80%;
+		}
+	}
+
 
 	&:nth-child(3n+1) {
 		background: $pink;
@@ -56,9 +75,18 @@ $grey: #b0b0b0;
 	&:nth-child(3n+3) {
 		background: $grey;
 	}
+}
 
-	.show-info {
+.show-page-container {
+	background-size: cover;
+	width: 100%;
+	height: calc(100vh - 8.5em);
+	overflow: scroll;
+
+	.episode-list,
+	.show-name {
 		padding: 1em;
 		background: white;
+		border: 2px solid black;
 	}
 }
