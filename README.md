@@ -20,6 +20,8 @@ Here you'll need to add the following text to your .env file:
 
     ADMIN_USER={your_username}
     ADMIN_PASSWORD={your_password}
+    GOOGLE_CALENDAR_ID={your_google_calendar_id}
+    LIVESTREAM_URL={your_voscast_id}
     S3_ACCESS_KEY={your_access_key}
     S3_ACCESS_SECRET={your_secret}
     S3_DIRECTORY={your_s3_directory}
