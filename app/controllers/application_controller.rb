@@ -17,10 +17,12 @@ class ApplicationController < ActionController::Base
         }
       }
     rescue
+      random_episode = EpisodeSerializer.new(Episode.random, root: false)
       render json: {
         streaming: false,
-        episode: Episode.random
+        episode: random_episode
       }
     end
   end
+
 end
