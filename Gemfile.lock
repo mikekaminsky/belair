@@ -59,6 +59,9 @@ GEM
       sass (>= 3.2)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    httparty (0.13.4)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jquery-rails (4.1.0)
       rails-dom-testing (~> 1.0)
@@ -72,6 +75,7 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    multi_xml (0.5.5)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     normalize-rails (4.0.0)
@@ -166,6 +170,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   font-awesome-sass (~> 4.5.0)
+  httparty
   jquery-rails
   normalize-rails
   pg
