@@ -1,9 +1,8 @@
 belAir.controller('PlayerController', ['AudioPlayer', '$scope', function(AudioPlayer, $scope) {
   AudioPlayer.autoPlay();
 
-  $scope.play = function play() {
-    var liveStreamUrl = "http://s2.voscast.com:9106/;stream.nsv";
-    AudioPlayer.play(liveStreamUrl);
+  $scope.playPause = function playPause() {
+    AudioPlayer.playPause();
   }
 
   $scope.showName = function showName() {

@@ -6,12 +6,14 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     file_url: BelAir.livestreamURL,
     name: "Live Stream",
     show: "Bel Air",
-  }
+  };
 
   this.play = function play(episode, callback) {
-    audio.episode = episode
-    player.setSrc(episode.file_url);
-    player.load();
+    if (episode) {
+      audio.episode = episode
+      player.setSrc(episode.file_url);
+      player.load();
+    }
 
     player.media.play().catch(function (error) {
       if (callback) {
@@ -23,7 +25,9 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
         }
       }
     })
-  }
+
+    this.playing = true;
+  };
 
   this.autoPlay = function auotPlay(url) {
     audio.play(livestream, function () {
@@ -31,5 +35,18 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
         audio.play(response.data.episode);
       });
     });
+  };
+
+  this.pause = function pause() {
+    player.pause();
+    this.playing = false;
   }
+
+  this.playPause = function playPause() {
+    if (this.playing) {
+      this.pause();
+    } else {
+      this.play();
+    }
+  };
 }]);
