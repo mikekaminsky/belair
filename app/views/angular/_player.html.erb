@@ -1,4 +1,10 @@
-<div class="player">
-	<a ng-click="play()">Play Livestream</a>
-	<audio id='audio-player' src='#' type='audio/mp3' preload='none'></audio>
+<a ng-click="play()" class="play-pause"></a>
+<div class="episode-data">
+  <span class="show-name">
+    {{ showName() }}
+  </span>
+  <span class="episode-name">
+    {{ episodeName() }}
+  </span>
 </div>
+<audio id='audio-player' src='#' type='audio/mp3' preload='none'></audio>

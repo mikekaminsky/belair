@@ -1,0 +1,32 @@
+@import "belair";
+
+
+ba-player {
+  .episode-data {
+    display: inline-block;
+
+    .show-name {
+      display: block;
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    .episode-name {
+      display: block;
+      font-size: 12px;
+      line-height: 22px;
+    }
+  }
+
+  .play-pause {
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    background-image: url(<%= asset_data_uri 'play.png' %>);
+    background-size: cover;
+  }
+
+  .mejs-container {
+    display: none;
+  }
+}
