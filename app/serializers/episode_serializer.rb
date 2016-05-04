@@ -9,4 +9,8 @@ class EpisodeSerializer < ActiveModel::Serializer
     object.show.name
   end
 
+  def name
+    object.name || object.created_at.strftime("%B %e, %Y")
+  end
+
 end
