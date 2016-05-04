@@ -13,4 +13,8 @@ belAir.controller('PlayerController', ['AudioPlayer', '$scope', function(AudioPl
     return AudioPlayer.episode.name;
   }
 
+  $scope.isPlaying = function isPlaying() {
+    return AudioPlayer.playing;
+  }
+
 }])
