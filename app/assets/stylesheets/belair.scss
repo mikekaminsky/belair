@@ -10,6 +10,15 @@ $grey: #b0b0b0;
 
 .header {
 	min-height: 8.5em;
+
+  .logo {
+    text-align: right;
+    margin-top: 24px;
+    display: block;
+    img {
+      width: 160px;
+    }
+  }
 }
 
 .footer {
