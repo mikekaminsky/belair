@@ -30,6 +30,11 @@ class EpisodesController < ApplicationController
     render json: {success: true}
   end
 
+  def random
+    render json: Episode.random
+  end
+
+
   private
 
   def episode_params

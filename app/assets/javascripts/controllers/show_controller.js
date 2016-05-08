@@ -10,7 +10,7 @@ belAir.controller('ShowController', ['AudioPlayer', 'Shows', '$location', '$rout
   });
 
   $scope.play = function play(episode) {
-    AudioPlayer.play(episode.file_url);
+    AudioPlayer.play(episode);
   };
 
 }]);
