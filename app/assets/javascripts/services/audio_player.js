@@ -8,23 +8,16 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     show: "Bel Air",
   };
 
-  this.play = function play(episode, callback) {
+  this.play = function play(episode, errorCallback) {
     if (episode) {
       audio.episode = episode
       player.setSrc(episode.file_url);
-      player.load();
+    }
+    if (errorCallback) {
+      player.media.onerror = errorCallback;
     }
 
-    player.media.play().catch(function (error) {
-      if (callback) {
-        callback();
-      } else {
-        console.log("Error playing audio: " + url);
-        if (error.message != voscastError) {
-          console.error(error.message);
-        }
-      }
-    })
+    player.play();
 
     this.playing = true;
   };
