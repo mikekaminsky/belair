@@ -37,7 +37,7 @@ class ShowsController < ApplicationController
   private
 
   def allowed_show_params
-    params.require(:show).permit(:name, :image_url, :description)
+    params.require(:show).permit(:name, :image_url, :background_image_url, :description)
   end
 
 end

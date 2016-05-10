@@ -15,6 +15,12 @@
     <br/>
     <img ng-src="{{ show.image_url }}"/>
   <p/>
+  <p>
+    <label>Background Image URL</label>
+    <input ng-model="show.background_image_url"/>
+    <br/>
+    <img ng-src="{{ show.background_image_url }}"/>
+  <p/>
   <button ng-click="saveShow()">Save!</button>
   <button ng-click="deleteShow()">Destroy!</button>
 </form>
