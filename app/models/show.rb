@@ -6,4 +6,12 @@ class Show < ActiveRecord::Base
   validates :name, presence: true
   validates :description, presence: true
 
+  def self.search(search_string)
+    if search_string
+      where('name ilike ?', "%#{search_string}%")
+    else
+      Show.all
+    end
+  end
+
 end
