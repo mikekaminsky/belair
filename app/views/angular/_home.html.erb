@@ -1,11 +1,13 @@
 <div class="shows row">
 	<div class="show col-sm-12" ng-class="$index <= 2 ? 'col-md-12' : 'col-md-4'" ng-repeat="show in shows">
-		<div class="show-img">
-			<img ng-src="{{ show.image_url }}"/>
-		</div>
-		<div class="show-info">
-			<a ng-href="/#/shows/{{show.id}}"><h2>{{show.name}}</h2></a>
-			<div class="show-description">{{ !!show.description ? show.description : 'omg wtf lol hai' }}</div>
+		<div class="show-content">
+			<div class="show-img">
+				<img ng-src="{{ show.image_url }}"/>
+			</div>
+			<div class="show-info">
+				<a ng-href="/#/shows/{{show.id}}"><h2>{{show.name}}</h2></a>
+				<div class="show-description">{{ !!show.description ? show.description : 'omg wtf lol hai' }}</div>
+			</div>
 		</div>
 	</div>
 </div>
