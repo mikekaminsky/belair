@@ -4,6 +4,9 @@ belAir.controller('ShowController', ['AudioPlayer', 'Shows', '$location', '$rout
   Shows.show($routeParams.id).then(function (response) {
     if (response.data.show) {
       $scope.show = response.data.show;
+      $scope.containerStyle = {
+        'background-image': 'url('+ ($scope.show.background_image_url || BelAir.defaultBackgroundImage) + ')'
+      }
     } else {
       $location.path('/').replace();
     }
