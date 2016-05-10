@@ -112,9 +112,9 @@ $grey: #b0b0b0;
 
 .show-page-container {
 	background-size: cover;
-	width: 100%;
 	height: calc(100vh - 8.5em);
 	overflow: scroll;
+	padding: 1em;
 
 	.episode-list,
 	.show-name {
