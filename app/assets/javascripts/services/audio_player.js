@@ -1,6 +1,7 @@
 belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
   var audio = this;
   var player = new MediaElementPlayer('#audio-player', {});
+  player.setVolume(0.9);
   var voscastError = "Failed to load because no supported source was found.";
   var livestream = {
     file_url: BelAir.livestreamURL,
