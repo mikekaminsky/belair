@@ -12,7 +12,7 @@ class ShowsController < ApplicationController
   end
 
   def index
-    render json: Show.all
+    render json: Show.search(params[:query])
   end
 
   def show
