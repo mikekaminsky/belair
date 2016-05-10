@@ -1,14 +1,10 @@
-<div class="container-fluid show-page-container" ng-style="containerStyle">
-	<div class="row">
-		<div class="episode-list col-md-4">
-			<div ng-repeat="episode in show.episodes">
-			  <a ng-click="play(episode)"><h3>Play <strong>{{episode.name}}</strong></h3></a>
-			</div>
+<div class="show-page-container" ng-style="containerStyle">
+	<div class="episode-list col-md-4">
+		<div ng-repeat="episode in show.episodes">
+		  <a ng-click="play(episode)"><h3>Play <strong>{{episode.name}}</strong></h3></a>
 		</div>
 	</div>
-	<div class="row">
-		<div class="show-name col-md-4 pull-right">
-			<h1>{{show.name}}</h1>
-		</div>
+	<div class="show-name col-md-4 pull-right">
+		<h1>{{show.name}}</h1>
 	</div>
 </div>
