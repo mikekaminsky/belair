@@ -24,7 +24,7 @@ belAir.controller('AdminEpisodeController', ['Attachments', 'Episodes', 'Shows',
         if (response.data.errors) {
           $scope.errors = response.data.errors
         } else {
-          $location.path('/admin/show/' + showID).replace();
+          $location.path('/admin/shows/' + showID).replace();
         }
       });
     }
@@ -34,7 +34,7 @@ belAir.controller('AdminEpisodeController', ['Attachments', 'Episodes', 'Shows',
         if (response.data.errors) {
           $scope.errors = response.data.errors
         } else {
-          $location.path('/admin/show/' + showID).replace();
+          $location.path('/admin/shows/' + showID).replace();
         }
       });
     }
