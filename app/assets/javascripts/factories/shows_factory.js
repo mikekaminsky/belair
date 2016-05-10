@@ -2,8 +2,8 @@ belAir.factory('Shows', ['$http', function ($http) {
   var url = '/api/shows/';
 
   shows = {
-    index: function () {
-      return $http.get(url);
+    index: function (params) {
+      return $http.get(url, {params: params});
     },
     show: function (id) {
       return $http.get(url + id);
