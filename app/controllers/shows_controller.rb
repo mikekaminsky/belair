@@ -12,7 +12,7 @@ class ShowsController < ApplicationController
   end
 
   def index
-    render json: Show.search(params[:query])
+    render json: Show.search(params[:query]).order("updated_at DESC")
   end
 
   def show

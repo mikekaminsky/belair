@@ -1,7 +1,12 @@
 belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
   var audio = this;
-  var player = new MediaElementPlayer('#audio-player', {});
-  var voscastError = "Failed to load because no supported source was found.";
+  var player = new MediaElementPlayer('#audio-player', {success: function (mediaElement, dom) {
+    mediaElement.setVolume(0.9);
+    mediaElement.addEventListener('ended', function () {
+      audio.autoPlay();
+    });
+  }});
+
   var livestream = {
     file_url: BelAir.livestreamURL,
     name: "Live Stream",
@@ -22,8 +27,8 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     this.playing = true;
   };
 
-  this.autoPlay = function auotPlay(url) {
-    audio.play(livestream, function () {
+  this.autoPlay = function autoPlay() {
+    audio.play(livestream, function randomEpisodeFallback() {
       $http.get('/api/episodes/random').then(function (response) {
         audio.play(response.data.episode);
       });

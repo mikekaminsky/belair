@@ -17,16 +17,16 @@ belAir.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
   }).when('/admin', {
     controller: 'AdminController',
     templateUrl: 'admin.html'
-  }).when('/admin/show/:showID/episodes/new', {
+  }).when('/admin/shows/:showID/episodes/new', {
     controller: 'AdminNewEpisodeController',
     templateUrl: 'admin_new_episode.html'
-  }).when('/admin/show/new', {
+  }).when('/admin/shows/new', {
     controller: 'AdminNewShowController',
     templateUrl: 'admin_new_show.html'
-  }).when('/admin/show/:id', {
+  }).when('/admin/shows/:id', {
     controller: 'AdminShowController',
     templateUrl: 'admin_show.html'
-  }).when('/admin/show/:showID/episodes/:episodeID', {
+  }).when('/admin/shows/:showID/episodes/:episodeID', {
     controller: 'AdminEpisodeController',
     templateUrl: 'admin_episode.html'
   }).when('/shows', {

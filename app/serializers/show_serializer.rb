@@ -1,5 +1,5 @@
 class ShowSerializer < ActiveModel::Serializer
-  attributes :name, :image_url, :id, :background_image_url
+  attributes :background_image_url, :description, :image_url, :id, :name
 
   has_many :episodes
 

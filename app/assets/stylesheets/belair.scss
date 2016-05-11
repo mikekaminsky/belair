@@ -1,7 +1,4 @@
-// standard variables
-$pink: #f4447b;
-$green: #a2e95a;
-$grey: #b0b0b0;
+@import "constants";
 
 * {
 	box-sizing: border-box !important;
@@ -9,7 +6,7 @@ $grey: #b0b0b0;
 
 
 .header {
-	min-height: 8.5em;
+	min-height: 110px;
 
   .logo {
     text-align: right;
