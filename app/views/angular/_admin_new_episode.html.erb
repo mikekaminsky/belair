@@ -8,6 +8,10 @@
     <input ng-model="episode.name"/>
   <p/>
   <p>
+    <label>Air Date</label>
+    <input ng-model="episode.air_date"/>
+  <p/>
+  <p>
     <button ng-hide="fileUpload" ngf-select="fileSelected($file)">
       {{ fileName || episode.file_url || "Choose File"}}
     </button>
