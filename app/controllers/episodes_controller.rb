@@ -38,7 +38,7 @@ class EpisodesController < ApplicationController
   private
 
   def episode_params
-    params.require(:episode).permit(:id, :name, :file_url, :show_id, :air_date)
+    params.require(:episode).permit(:id, :name, :file_url, :show_id)
   end
 
 end
