@@ -3,7 +3,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="episode-list col-md-4">
-					<div ng-repeat="episode in show.episodes | orderBy:'-air_date'">
+					<div ng-repeat="episode in show.episodes">
 					  <a ng-click="play(episode)"><h3>Play <strong>{{episode.name}}</strong></h3></a>
 					</div>
 				</div>
