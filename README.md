@@ -10,9 +10,9 @@ Install the things:
     brew update
     brew doctor
     brew install postgres
-    brew install rails
     brew install rbenv
     rbenv install 2.2.2
+    gem install rails
     postgres -D /usr/local/var/postgres
     touch .env
 
