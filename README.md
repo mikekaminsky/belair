@@ -29,6 +29,7 @@ Here you'll need to add the following text to your .env file:
 And then you can run the app with:
 
     bundle
+    rake db:create
     rake db:migrate
     rails s
 
