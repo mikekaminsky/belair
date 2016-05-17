@@ -5,13 +5,13 @@
 			</div>
 			<div class="show-info">
 				<h2 class="show-name"><a ng-href="/#/shows/{{show.id}}">{{show.name}}</a></h2>
-				<div class="show-description">{{ !!show.description ? show.description : 'hm hr ugh a;lasjdf ;lj;aslkdhjt ;aksld jkjdkl xcg ks dtj alk sd jflckj asdf;lkasjd; f;aldsjflk a;lsdkjf;lj sd;lfkjasd;lfj als;kdtjaslkdfhasf as fdas d asdkfjas;ld ta sdjsadf adsj sdkf' }}</div>
+				<div class="show-description">{{ show.description }}</div>
 			</div>
 		</div>
 		<div class="show-content" ng-if="smallSize()">
 			<div class="show-info">
 				<h2 class="show-name"><a ng-href="/#/shows/{{show.id}}">{{show.name}}</a></h2>
-				<div class="show-description">{{ !!show.description ? show.description : 'hm hr ugh a;lasjdf ;lj;aslkdhjt ;aksld jkjdkl xcg ks dtj alk sd jflckj asdf;lkasjd; f;aldsjflk a;lsdkjf;lj sd;lfkjasd;lfj als;kdtjaslkdfhasf as fdas d asdkfjas;ld ta sdjsadf adsj sdkf'  }}</div>
+				<div class="show-description">{{ show.description }}</div>
 			</div>
 			<div class="show-img"  ng-style="{'background-image':'url(' + show.image_url + ')'}">
 			</div>

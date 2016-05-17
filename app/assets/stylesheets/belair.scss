@@ -1,5 +1,20 @@
 @import "constants";
 
+@font-face {
+	font-family: 'HKGrotesk Regular';
+	src: url("HKGrotesk-Regular.otf");
+}
+
+@font-face {
+	font-family: 'HKGrotesk Bold';
+	src: url("HKGrotesk-Bold.otf");
+}
+
+@font-face {
+	font-family: 'HKGrotesk Light';
+	src: url("HKGrotesk-Light.otf");
+}
+
 * {
 	box-sizing: border-box !important;
 }
@@ -91,6 +106,7 @@ a {
 
 .contact {
 	padding: 2em;
+	padding-top: 1em;
 	text-align: center;
 
 	h3 {
