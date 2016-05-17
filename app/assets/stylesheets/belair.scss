@@ -13,6 +13,11 @@ h1, h2, h3 {
 	margin: 1.25rem 0;
 }
 
+a {
+	color: black;
+	text-decoration: none;
+}
+
 .header {
 	min-height: 110px;
 
@@ -37,15 +42,17 @@ h1, h2, h3 {
 	position: relative;
 }
 
+.show-description {
+	width: 90%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
 .home .show {
 	display: flex;
 	overflow: hidden;
 	padding: 0;
-
-	a {
-		color: black;
-		text-decoration: none;
-	}
 
 	.show-img {
 		background-size: cover;		
@@ -60,13 +67,6 @@ h1, h2, h3 {
 		margin: 1em;
 		padding: 1em;
 		background: white;
-	}
-
-	.show-description {
-		width: 90%;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
 	}
 
 	&:nth-child(3n+1) {
@@ -84,13 +84,50 @@ h1, h2, h3 {
 	background-size: cover;
 	height: calc(100vh - 8.5em);
 	overflow: scroll;
-	padding: 1em;
 
-	.episode-list,
-	.show-name {
+	.episodes,
+	.show-info {
+		margin: 1em 0;
 		padding: 1em;
 		background: white;
 		border: 2px solid black;
+	}
+
+	.episodes {
+		padding: 1em 2em;
+	}
+
+	.episodes-header {
+		font-family: 'HKGrotesk Light';
+		font-size: 1em;
+		text-transform: uppercase;
+	}
+
+	.episode {
+	    font-size: 1.25em;
+	    padding: 0.5em 0;
+	    
+	    a {
+    		display: flex;
+    		line-height: 1em;
+    	}
+
+		.play-icon {
+			display: inline-block;
+		    width: 16px;
+		    height: 16px;
+		    font-size: 8px;
+		    border-radius: 8px;
+		    border: 2px solid black;
+		    margin-right: 6px;
+		    text-align: center;
+		    text-indent: 2px;
+		    line-height: 12px;
+		}
+
+		.episode-name {
+			display: inline-block;
+		}
 	}
 }
 
@@ -157,7 +194,15 @@ h1, h2, h3 {
 			border-bottom: 2px solid black;
 		}
 
-	} 
+	}
+
+	.show-page-container {
+		.show-info {
+			margin: 0 -15px;
+			border: 0;
+			border-bottom: 2px solid black;
+		}
+	}
 }
 
 @media (min-width: 768px) {
@@ -213,6 +258,19 @@ h1, h2, h3 {
 			.show-info {
 				float: right;
 			}
+		}
+	}
+
+	.show-page-container {
+		.show-info {
+			position: fixed;
+			bottom: 1em;
+			right: 1em;
+		}
+
+		.episodes {
+			max-height: 20em;
+			overflow-y: scroll;
 		}
 	}
 }
