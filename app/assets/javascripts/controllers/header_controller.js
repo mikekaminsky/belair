@@ -19,6 +19,7 @@ belAir.controller('HeaderController', ['$scope', '$aside', '$location', function
 			placement: position,
 			size: 'sm',
 			backdrop: backdrop,
+			animation: false,
 			controller: function($scope, $uibModalInstance) {
 				$scope.close = function(e) {
 					$uibModalInstance.dismiss();
