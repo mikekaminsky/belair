@@ -17,3 +17,5 @@
 /tmp
 *.sw*
 .env*
+
+*.DS_Store

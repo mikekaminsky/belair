@@ -40,6 +40,8 @@
 		overflow: hidden;
 		display: flex;
 		height: 28em;
+		float: left;
+		width: 100%;
 	}
 
 	.show-info {
@@ -47,6 +49,15 @@
 		margin: 1em;
 		padding: 1em;
 		background: white;
+		float: left;
+		width: calc(100% - 2em);
+	}
+
+	.show-description {
+		width: 90%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 
 	&:nth-child(3n+1) {
@@ -60,10 +71,24 @@
 	}
 }
 
-@media (max-width: 480px) {
-	.show .show-img {
-		height: (40vh);
-	}
+@media (max-width: 767px) {
+	.show {
+		.show-content {
+			margin: 1em;
+			border: 2px solid black;
+		}
+
+		.show-img {
+			height: (40vh);
+		}
+
+		.show-info {
+			margin: 0;
+			border: 0;
+			width: 100%;
+		}
+
+	} 
 }
 
 @media (min-width: 768px) {

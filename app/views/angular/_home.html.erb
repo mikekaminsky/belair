@@ -1,12 +1,22 @@
 <div class="shows row">
 	<div class="show col-xs-12" ng-class="$index <= 2 ? 'col-sm-12' : 'col-sm-4'" ng-repeat="show in shows">
-		<div class="show-content">
+		<div class="show-content" ng-if="!smallSize()">
 			<div class="show-img"  ng-style="{'background-image':'url(' + show.image_url + ')'}">
 			</div>
 			<div class="show-info">
 				<a ng-href="/#/shows/{{show.id}}"><h2>{{show.name}}</h2></a>
-				<div class="show-description">{{ !!show.description ? show.description : 'omg wtf lol hai' }}</div>
+				<div class="show-description">{{ !!show.description ? show.description : 'four score and seven years ago our forefathers brought orth upon this great continent a whole bunch of text that should be enough to make the overflow go way way over the alloted maximum height of 2em.' }}</div>
 			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="show-content" ng-if="smallSize()">
+			<div class="show-info">
+				<a ng-href="/#/shows/{{show.id}}"><h2>{{show.name}}</h2></a>
+				<div class="show-description">{{ !!show.description ? show.description : 'four score and seven years ago our forefathers brought orth upon this great continent a whole bunch of text that should be enough to make the overflow go way way over the alloted maximum height of 2em.' }}</div>
+			</div>
+			<div class="show-img"  ng-style="{'background-image':'url(' + show.image_url + ')'}">
+			</div>
+			<div class="clear"></div>
 		</div>
 	</div>
 </div>
