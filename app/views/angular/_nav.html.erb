@@ -1,8 +1,24 @@
-<div class="modal-header">
-	<span class="glyphicon glyphicon-remove" ng-click="close($event)"></span>
-</div>
+<div class="nav">
+	<div class="modal-header">
+		<span class="close-icon" ng-click="close($event)"></span>
+	</div>
 
-<div class="modal-body">
-	<div>ayy</div>
-	<div>lmao</div>
+	<div class="modal-body">
+		<div><a ng-click="go('/', $event)" href="/#/">Home</a></div>
+		<div><a ng-click="go('/shows', $event)">Shows</a></div>
+		<div><a ng-click="go('/schedule', $event)">Schedule</a></div>
+		<!-- <div><a ng-click="go('/about', $event)">About</a></div> -->
+	</div>
+
+	<div class="modal-footer">
+		<a target="_blank" href="https://www.facebook.com/belairbk">
+			<%= image_tag 'facebook.svg', alt: 'Bel Air on Facebook', title: 'Bel Air on Facebook' %>
+		</a>
+		<a target="_blank" href="https://www.instagram.com/radiobelair/">
+			<%= image_tag 'instagram.svg', alt: 'Bel Air on Instagram', title: 'Bel Air on Instagram' %>
+		</a>
+		<a target="_blank" href="https://twitter.com/radiobelair">
+			<%= image_tag 'twitter.svg', alt: 'Bel Air on Twitter', title: 'Bel Air on Twitter' %>
+		</a>
+	</div>
 </div>

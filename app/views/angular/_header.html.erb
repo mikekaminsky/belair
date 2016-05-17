@@ -1,14 +1,16 @@
 <div class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
-  	<span class="pull-left">
-		<button type="button" class="btn btn-default btn-lg" ng-click="openAside('left', true)">
-			<span class="glyphicon glyphicon-align-justify"></span>
-		</button>
-  	</span>
+  	<div class="row">
+  		<div class="col-xs-12">
+			<div class="menu-button pull-left" ng-click="openAside('left', true)">
+				<span class="glyphicon glyphicon-align-justify"></span>
+			</div>
 
-    <a class='logo' href="/#/">
-      <%= image_tag 'logo.png', alt: 'Bel Air', title: 'Bel Air' %>
-    </a>
+		    <a class='logo' href="/#/">
+		      <%= image_tag 'logo.png', alt: 'Bel Air', title: 'Bel Air' %>
+		    </a>
+	    </div>
+	</div>
     <ba-player/>
   </div>
 </div>

@@ -1,4 +1,4 @@
-belAir.controller('HeaderController', ['$scope', '$aside', function($scope, $aside) {
+belAir.controller('HeaderController', ['$scope', '$aside', '$location', function($scope, $aside, $location) {
 
 	$scope.asideState = {
 		open: false
@@ -24,8 +24,12 @@ belAir.controller('HeaderController', ['$scope', '$aside', function($scope, $asi
 					$uibModalInstance.dismiss();
 					e.stopPropagation();
 				};
+
+				$scope.go = function(page, e) {
+					$scope.close(e);
+					$location.url(page);
+				}
 			}
 		}).result.then(postClose, postClose);
 	}
-
 }]);
