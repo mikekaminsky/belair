@@ -10,9 +10,9 @@ Install the things:
     brew update
     brew doctor
     brew install postgres
-    brew install rails
     brew install rbenv
     rbenv install 2.2.2
+    gem install rails
     postgres -D /usr/local/var/postgres
     touch .env
 
@@ -29,6 +29,7 @@ Here you'll need to add the following text to your .env file:
 And then you can run the app with:
 
     bundle
+    rake db:create
     rake db:migrate
     rails s
 
