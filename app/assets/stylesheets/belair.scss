@@ -14,8 +14,8 @@ h1, h2, h3 {
 }
 
 a {
-	color: black;
-	text-decoration: none;
+	color: black !important;
+	cursor: pointer;
 }
 
 .header {
