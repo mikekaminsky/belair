@@ -95,6 +95,8 @@ a {
 
 	.episodes {
 		padding: 1em 2em;
+		max-height: 28em;
+		overflow-y: scroll;
 	}
 
 	.episodes-header {
@@ -266,11 +268,6 @@ a {
 			position: fixed;
 			bottom: 1em;
 			right: 1em;
-		}
-
-		.episodes {
-			max-height: 20em;
-			overflow-y: scroll;
 		}
 	}
 }
