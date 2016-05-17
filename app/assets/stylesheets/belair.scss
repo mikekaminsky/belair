@@ -89,6 +89,15 @@ a {
 	text-overflow: ellipsis;
 }
 
+.contact {
+	padding: 2em;
+	text-align: center;
+
+	h3 {
+		color: $pink;
+	}
+}
+
 .home .show {
 	display: flex;
 	overflow: hidden;
