@@ -1,5 +1,18 @@
 @import "constants";
 
+* {
+	box-sizing: border-box !important;
+}
+
+body {
+	font-family: 'HKGrotesk Regular';
+}
+
+h1, h2, h3 {
+	font-family: 'HKGrotesk Bold';
+	margin: 1.25rem 0;
+}
+
 .header {
 	min-height: 110px;
 
@@ -24,7 +37,7 @@
 	position: relative;
 }
 
-.show {
+.home .show {
 	display: flex;
 	overflow: hidden;
 	padding: 0;
@@ -39,9 +52,7 @@
 		background-position: center;
 		overflow: hidden;
 		display: flex;
-		height: 28em;
-		float: left;
-		width: 100%;
+		height: 19em;
 	}
 
 	.show-info {
@@ -49,8 +60,6 @@
 		margin: 1em;
 		padding: 1em;
 		background: white;
-		float: left;
-		width: calc(100% - 2em);
 	}
 
 	.show-description {
@@ -68,77 +77,6 @@
 	}
 	&:nth-child(3n+3) {
 		background: $grey;
-	}
-}
-
-@media (max-width: 767px) {
-	.show {
-		.show-content {
-			margin: 1em;
-			border: 2px solid black;
-		}
-
-		.show-img {
-			height: (40vh);
-		}
-
-		.show-info {
-			margin: 0;
-			border: 0;
-			width: 100%;
-		}
-
-	} 
-}
-
-@media (min-width: 768px) {
-	.show {
-		&:first-child,
-		&:nth-child(2),
-		&:nth-child(3) {
-			padding-top: 0;
-
-			.show-content {
-				border: 2px solid black;
-				margin: 1em;
-				height: 50vh;
-			}
-
-			.show-img {
-				width:  30%;
-				height: 100%;
-			}
-
-			.show-info {
-				border: none;
-				margin: 0;
-				width: 70%;
-				height: 100%;
-			}
-		}
-
-		&:first-child,
-		&:nth-child(3) {
-			.show-img {
-				float: left;
-				border-right: 2px solid black;
-			}
-
-			.show-info {
-				float: left;
-			}
-		}
-
-		&:nth-child(2) {
-			.show-img {
-				float: right;
-				border-left: 2px solid black;
-			}
-
-			.show-info {
-				float: right;
-			}
-		}
 	}
 }
 
@@ -197,6 +135,84 @@
 
 		&.about-img-3 {
 			background-image: url('http://www.tacticalfanboy.com/wp-content/uploads/2011/03/hail-to-the-king-baby-duke-nukem-forever-wallpaper.jpg');
+		}
+	}
+}
+
+// responsive stuff
+@media (max-width: 767px) {
+	.home .show {
+		.show-content {
+			margin: 1em;
+			border: 2px solid black;
+		}
+
+		.show-img {
+			height: 40vh;
+		}
+
+		.show-info {
+			margin: 0;
+			border: 0;
+			border-bottom: 2px solid black;
+		}
+
+	} 
+}
+
+@media (min-width: 768px) {
+	.home .show {
+		&:first-child,
+		&:nth-child(2),
+		&:nth-child(3) {
+			padding-top: 0;
+
+			.show-content {
+				border: 2px solid black;
+				margin: 1em;
+				height: 21em;
+			}
+
+			.show-img {
+				width:  30%;
+				height: 100%;
+			}
+
+			.show-info {
+				border: none;
+				margin: 0;
+				width: 70%;
+				height: 100%;
+				padding: 3em;
+			}
+
+			.show-name {
+				font-size: 4em;
+				margin: 3rem 0;
+			}
+		}
+
+		&:first-child,
+		&:nth-child(3) {
+			.show-img {
+				float: left;
+				border-right: 2px solid black;
+			}
+
+			.show-info {
+				float: left;
+			}
+		}
+
+		&:nth-child(2) {
+			.show-img {
+				float: right;
+				border-left: 2px solid black;
+			}
+
+			.show-info {
+				float: right;
+			}
 		}
 	}
 }
