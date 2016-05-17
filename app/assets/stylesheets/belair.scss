@@ -47,6 +47,37 @@ a {
 	z-index: 100;
 }
 
+.nav {
+	font-size: 1.5em;
+	text-transform: uppercase;
+	color: $pink;
+
+	a {
+		color: $pink !important;
+	}
+
+	.close-icon {
+		float: left;
+		cursor: pointer;
+		&:before {
+			content: '\2715'
+		}
+	}
+
+	.modal-footer {
+		text-align: center;
+		position: absolute;
+		bottom: 2em;
+		width: 100%;
+		border: none;
+		font-size: 1.25rem;
+
+		a {
+			margin: 0 8px;
+		}
+	}
+}
+
 .content {
 	position: relative;
 }
@@ -86,6 +117,29 @@ a {
 	}
 	&:nth-child(3n+3) {
 		background: $grey;
+	}
+}
+
+.shows {
+	background: $green;
+
+	.search {
+		background: white;
+		padding: 1em;
+		margin-bottom: 1em;
+	}
+
+	.panel {
+		border: 2px solid black;
+	}
+
+	.panel-header {
+		border-bottom: 2px solid black;
+		
+		img {
+			width: 100%;
+			height: auto;
+		}		
 	}
 }
 
@@ -138,37 +192,6 @@ a {
 
 		.episode-name {
 			display: inline-block;
-		}
-	}
-}
-
-.nav {
-	font-size: 1.5em;
-	text-transform: uppercase;
-	color: $pink;
-
-	a {
-		color: $pink !important;
-	}
-
-	.close-icon {
-		float: left;
-		cursor: pointer;
-		&:before {
-			content: '\2715'
-		}
-	}
-
-	.modal-footer {
-		text-align: center;
-		position: absolute;
-		bottom: 2em;
-		width: 100%;
-		border: none;
-		font-size: 1.25rem;
-
-		a {
-			margin: 0 8px;
 		}
 	}
 }
