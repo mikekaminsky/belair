@@ -1,8 +1,16 @@
 <div class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
-    <a class='logo' href="/#/">
-      <%= image_tag 'logo.png', alt: 'Bel Air', title: 'Bel Air' %>
-    </a>
+  	<div class="row">
+  		<div class="col-xs-12">
+			<div class="menu-button pull-left" ng-click="openAside('left', true)">
+				<span class="glyphicon glyphicon-align-justify"></span>
+			</div>
+
+		    <a class='logo' href="/#/">
+		      <%= image_tag 'logo.png', alt: 'Bel Air', title: 'Bel Air' %>
+		    </a>
+	    </div>
+	</div>
     <ba-player/>
   </div>
 </div>

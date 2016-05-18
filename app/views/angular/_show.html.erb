@@ -1,15 +1,18 @@
 <div class="show-page-container row" ng-style="containerStyle">
-	<div class="column-md-12">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="episode-list col-md-4">
-					<div ng-repeat="episode in show.episodes | orderBy:'-air_date'">
-					  <a ng-click="play(episode)"><h3>Play <strong>{{episode.name}}</strong></h3></a>
-					</div>
-				</div>
-				<div class="show-name col-md-4 pull-right">
-					<h1>{{show.name}}</h1>
-				</div>
+	<div class="col-xs-12 col-sm-4 pull-right">
+		<div class="show-info">
+			<h1 class="show-name">{{show.name}}</h1>
+			<div class="show-description">{{ show.description }}</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-4">
+		<div class="episodes">
+			<div class="episodes-header">Previous Episodes</div>
+			<div class="episode" ng-repeat="episode in show.episodes | orderBy:'-air_date'">
+			  <a ng-click="play(episode)">
+			  	<div class="play-icon glyphicon glyphicon-play"></div>
+			  	<div class="episode-name">{{episode.name}}</div>
+			  </a>
 			</div>
 		</div>
 	</div>
