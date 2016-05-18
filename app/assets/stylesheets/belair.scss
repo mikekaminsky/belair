@@ -248,20 +248,55 @@ a {
 	background: white;
 	text-align: center;
 
+	.about-text {
+		padding: 1.5em 0;
+	}
+
+	h2 {
+		font-size: 3em;
+		color: $pink;
+	}
+
+	h3 {
+		font-size: 1.25em;
+		font-family: 'HKGrotesk Light';
+		text-transform: uppercase;
+
+	}
+
+	.image-link {
+		display: inline-block;
+		width: auto;
+		max-width: 120px;
+		height: 108px;
+		overflow: hidden;
+
+		img {
+			width: auto;
+			height: 100%;
+		}
+	}
+
 	.about-img {
 		height: 24em;
 		background-size: cover;
 
 		&.about-img-1 {
-			background-image: url('http://41.media.tumblr.com/tumblr_m95lqq8cFq1qeflnoo1_1280.jpg');
+			// background-image: url('https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/12801167_3631556432252_7234413885634792731_n.jpg?oh=dfaa9fbb2162de4201b91d5b5be4e709&oe=57D19D7A');
+			// background-position: center;
+			background-image: url('https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e15/10787743_892377607440373_1257534421_n.jpg?ig_cache_key=ODUxMDc5OTk0MDE1MTg2OTk0.2');
+			background-position: top;
 		}
 
 		&.about-img-2 {
-			background-image: url('http://wallpapercave.com/wp/eLeg8tg.png');
+			// background-image: url('https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/12940907_1717448825180475_1475671739_n.jpg?ig_cache_key=MTIyNDgwODQxMjIzNTY2MTg1OQ%3D%3D.2');
+			background-image: url('https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/12729646_822906401166002_1946249533_n.jpg?ig_cache_key=MTE4NzMzMzQ2OTIxODc2NzM0OA%3D%3D.2');			
+			background-position: center;
 		}
 
 		&.about-img-3 {
-			background-image: url('http://www.tacticalfanboy.com/wp-content/uploads/2011/03/hail-to-the-king-baby-duke-nukem-forever-wallpaper.jpg');
+			background-image: url('https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/12805922_3631556672258_7647726852073508736_n.jpg?oh=b8450e23e3d63a7ea5aecac7e213d218&oe=57DED8C5');
+			background-position: top;
 		}
 	}
 }
@@ -292,6 +327,10 @@ a {
 			border: 0;
 			border-bottom: 2px solid black;
 		}
+	}
+
+	.about-page .about-img {
+		height: 18em;
 	}
 }
 
@@ -358,4 +397,11 @@ a {
 			right: 1em;
 		}
 	}
+}
+
+@media (min-width: 1024px) {
+	.about-page .about-img {
+		height: 32em;
+	}
+
 }
