@@ -98,10 +98,7 @@ a {
 }
 
 .show-description {
-	width: 90%;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+	line-height: 1.4em;
 }
 
 .contact {
@@ -132,6 +129,10 @@ a {
 		margin: 1em;
 		padding: 1em;
 		background: white;
+	}
+
+	.show-description {
+		max-height: 4.2em;
 	}
 
 	&:nth-child(3n+1) {
@@ -323,7 +324,7 @@ a {
 
 	.show-page-container {
 		.show-info {
-			margin: 0 -15px;
+			margin-top: 0;
 			border: 0;
 			border-bottom: 2px solid black;
 		}

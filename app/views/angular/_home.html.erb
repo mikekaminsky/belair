@@ -5,7 +5,7 @@
 			</div>
 			<div class="show-info">
 				<h2 class="show-name"><a ng-href="/#/shows/{{show.id}}">{{show.name}}</a></h2>
-				<div class="show-description">{{ show.description }}</div>
+				<div class="show-description" ng-bind="show.description" ellipsis></div>
 			</div>
 		</div>
 		<div class="show-content" ng-if="smallSize()">
