@@ -2,7 +2,8 @@ belAir = angular.module('belAir', [
   'ngRoute',
   'ngFileUpload',
   'ui.bootstrap',
-  'ngAside'
+  'ngAside',
+  'dibari.angular-ellipsis'
 ]);
 
 belAir.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
