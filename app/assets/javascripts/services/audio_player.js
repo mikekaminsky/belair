@@ -31,8 +31,10 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     audio.play(livestream, function randomEpisodeFallback() {
       $http.get('/api/episodes/random').then(function (response) {
         audio.play(response.data.episode);
+        audio.pause()
       });
     });
+    audio.pause()
   };
 
   this.pause = function pause() {
