@@ -17,4 +17,12 @@ belAir.controller('PlayerController', ['AudioPlayer', '$scope', function(AudioPl
     return AudioPlayer.playing;
   }
 
+  $scope.streamExists = function streamExists() {
+    return AudioPlayer.stream_exists;
+  }
+
+  $scope.autoPlay = function autoPlay() {
+    return AudioPlayer.autoPlay();
+  }
+
 }])

@@ -7,4 +7,6 @@
     {{ episodeName() }}
   </span>
 </div>
+<a ng-click="autoPlay()">{{streamExists() ? "Switch to Live Stream" : "Play Random Episode"}}</a>
 <audio id='audio-player' src='#' type='audio/mp3' preload='none'></audio>
+
