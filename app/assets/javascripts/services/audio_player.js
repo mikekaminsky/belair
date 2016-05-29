@@ -27,14 +27,22 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     this.playing = true;
   };
 
-  this.autoPlay = function autoPlay() {
-    audio.play(livestream, function randomEpisodeFallback() {
-      $http.get('/api/episodes/random').then(function (response) {
-        audio.play(response.data.episode);
-        audio.pause()
-      });
+  this.randomEpisodeFallback = function randomEpisodeFallback() {
+    $http.get('/api/episodes/random').then(function (response) {
+      audio.play(response.data.episode);
+      audio.pause();
     });
-    audio.pause()
+  };
+
+  this.autoPlay = function autoPlay() {
+    try{
+      audio.play(livestream).then(function(){
+        audio.currentTime = 0;
+        audio.pause();
+      });
+    } catch (errorCallback){
+      this.randomEpisodeFallback()
+    }
   };
 
   this.pause = function pause() {
