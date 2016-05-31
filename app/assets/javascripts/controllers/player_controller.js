@@ -1,5 +1,5 @@
 belAir.controller('PlayerController', ['AudioPlayer', '$scope', function(AudioPlayer, $scope) {
-  AudioPlayer.autoPlay();
+  AudioPlayer.loadNewMedia();
 
   $scope.playPause = function playPause() {
     AudioPlayer.playPause();
@@ -21,8 +21,8 @@ belAir.controller('PlayerController', ['AudioPlayer', '$scope', function(AudioPl
     return AudioPlayer.stream_exists;
   }
 
-  $scope.autoPlay = function autoPlay() {
-    return AudioPlayer.autoPlay();
+  $scope.loadNewMedia = function streamExists() {
+    return AudioPlayer.loadNewMedia();
   }
 
 }])
