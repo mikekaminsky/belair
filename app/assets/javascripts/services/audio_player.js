@@ -13,31 +13,29 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     mediaElement.addEventListener('ended', self.loadNewMedia); // Load new media when an episode has ended
   }});
 
-  this.setPlaying = function(){
+  this.play = function(){
+    player.play();
     self.playing = true;
   };
 
-  this.setPaused = function(){
+  this.pause = function(){
+    player.pause();
     self.playing = false;
   };
 
   this.loadNewMedia = function() {
-    console.log('load New Meida')
-    player.pause();
-    self.setPaused()
+    self.pause();
     self.checkForLivestream(self.onLivestreamError);
   };
 
   this.checkForLivestream = function(onError) {
-    console.log('check For Livestream')
-    //console.log(BelAir.livestreamURL)
+    console.log(BelAir.livestreamURL)
     self.setSource(livestream);
     player.media.load();
     player.media.onerror = onError;
   };
 
   this.onLivestreamError = function(error) {
-    console.log('on Live Stream Error')
     self.stream_exists = false;
     self.getRandomEpisode(self.onRandomEpisodeLoad, self.onRandomEpisodeError);
   };
@@ -47,8 +45,7 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
   };
 
   this.onRandomEpisodeLoad = function(response) {
-    player.pause();
-    self.setPaused()
+    self.pause();
     self.setSource(response.data.episode);
   };
 
@@ -63,18 +60,15 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
 
   this.playPause = function playPause() {
     if (self.playing) {
-      player.pause();
-      self.setPaused()
+      self.pause();
     } else {
-      player.play();
-      self.setPlaying()
+      self.play();
     }
   };
 
   this.setEpisodeAndPlay = function(episode) {
     self.setSource(episode);
-    player.play();
-    self.setPlaying();
+    self.play();
   };
 
 }]);
