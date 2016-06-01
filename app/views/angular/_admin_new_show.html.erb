@@ -1,28 +1,36 @@
-<h1>Create New Show</h1>
-<p ng-repeat="error in errors" style="color: red;">
-  {{ error }}
-</p>
-<form>
-  <p>
-    <label>Name</label>
-    <input ng-model="show.name"/>
-    <label>Description</label>
-    <input ng-model="show.description"/>
-  <p/>
-  <p>
-    <label>Image URL</label>
-    <input ng-model="show.image_url"/>
-    <br/>
-    <img ng-src="{{ show.image_url }}"/>
-  <p/>
-  <p>
-    <label>Background Image URL</label>
-    <input ng-model="show.background_image_url"/>
-    <br/>
-    <img ng-src="{{ show.background_image_url }}"/>
-  <p/>
-  <button ng-click="saveShow()">Save!</button>
-</form>
-
-
-<a ng-href="/#/admin"><h5>Admin Home</h5></a>
+<div class="admin-panel">
+  <div class="title">BelAir Admin</div>
+  <h1>Create New Show</h1>
+  <p ng-repeat="error in errors" style="color: red;">
+    {{ error }}
+  </p>
+   <div class="action">
+    <form>
+   
+      <p>
+        <label>Name</label><br/>
+        <input ng-model="show.name"/>
+      </p>
+      <p>
+        <label>Description</label><br>
+        <textarea ng-model="show.description"/>
+      </p>
+      <p>
+        <label>Image URL</label>
+        <input ng-model="show.image_url"/>
+        <br/>
+        <img ng-src="{{ show.image_url }}"/>
+      <p/>
+      <p>
+        <label>Background Image URL</label>
+        <input ng-model="show.background_image_url"/>
+        <br/>
+        <img ng-src="{{ show.background_image_url }}"/>
+      <p/>
+      <button ng-click="saveShow()">Save!</button>
+      </form>
+    </div>
+    <div class="action back-link">
+      <h4><a ng-href="/#/admin">&#8592; Back to Admin Home</a></h4>
+    </div>
+</div>

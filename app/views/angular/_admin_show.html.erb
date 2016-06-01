@@ -1,34 +1,48 @@
-<h1>Edit Show:{{ show.name }}</h1>
-<p ng-repeat="error in errors" style="color: red;">
-  {{ error }}
-</p>
-<form>
-  <p>
-    <label>Name</label>
-    <input ng-model="show.name"/>
-    <label>Description</label>
-    <input ng-model="show.description"/>
-  <p/>
-  <p>
-    <label>Image URL</label>
-    <input ng-model="show.image_url"/>
-    <br/>
-    <img ng-src="{{ show.image_url }}"/>
-  <p/>
-  <p>
-    <label>Background Image URL</label>
-    <input ng-model="show.background_image_url"/>
-    <br/>
-    <img ng-src="{{ show.background_image_url }}"/>
-  <p/>
-  <button ng-click="saveShow()">Save!</button>
-  <button ng-click="deleteShow()">Destroy!</button>
-</form>
+ <div class="admin-panel">
+  <div class="title">BelAir Admin</div>
+   <div class="action">
+    <h1><a ng-href="/#/admin/shows/{{show.id}}/episodes/new">&#43;&#9834; Add New Episode</a></hi>
+   </div>
+  <div class="action">
+    <h1>&#9998; Update your episodes</h1>
+    <div ng-repeat="episode in show.episodes">
+      <h3><a ng-href="/#/admin/shows/{{ show.id }}/episodes/{{ episode.id }}/">{{episode.name}} &#9998; Edit</a></h3>
+    </div>
+  </div>
+  <div class="action">
+    <h1>Show Info</h1>
+    <p ng-repeat="error in errors" style="color: red;">
+      {{ error }}
+    </p>
+    <form>
+      <div class="">
+        <label>Name</label>
+        <input ng-model="show.name"/>
+        <label>Description</label>
+        <textarea ng-model="show.description"/>
+      </div>
+      <div class="action">
+        <div class="show-img">
+          <label>Image URL</label>
+          <input ng-model="show.image_url"/>
+          <br/>
+          <img ng-src="{{ show.image_url }}"/>
+        </div>
+        <div class="show-img">
+          <label>Background Image URL</label>
+          <input ng-model="show.background_image_url"/>
+          <br/>
+          <img ng-src="{{ show.background_image_url }}"/>
+        </div>
+      </div>
+      <div class="action">
+        <button ng-click="saveShow()">Save!</button>
+        <button ng-click="deleteShow()">Destroy this show!</button>
+      </div>
+    </form>
+  </div>
 
-<a ng-href="/#/admin/shows/{{show.id}}/episodes/new"><h3>Add New Episode</h3></a>
-<div ng-repeat="episode in show.episodes">
-  <h3>{{episode.name}}</h3>
-  <a ng-href="/#/admin/shows/{{ show.id }}/episodes/{{ episode.id }}/">Edit!</a>
+  <div class="action back-link">
+    <h4><a ng-href="/#/admin">&#8592; Back to Admin Home</a></h4>
+  </div>
 </div>
-
-<a ng-href="/#/admin"><h5>Admin Home</h5></a>

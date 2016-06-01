@@ -39,3 +39,16 @@ belAir.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
     templateUrl: 'shows.html'
   }).otherwise({ redirectTo: '/'});
 }]);
+
+_gCalFlow_debug = true;
+
+var $ = jQuery;
+
+$(function() {
+  $('#gcf-simple').gCalFlow({
+    calid: 'du6vkpb0vsoob2vht324jlqikk@group.calendar.google.com',
+    maxitem: 50,
+    globalize_fmt_monthday: 'M',
+    date_formatter: function(d, allday_p) { return (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getYear().toString().substr(-2) }
+    })
+});

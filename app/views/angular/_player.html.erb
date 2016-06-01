@@ -1,12 +1,16 @@
-<a ng-click="playPause()" class="play-pause glyphicon" ng-class="isPlaying() ? 'glyphicon-pause' : 'glyphicon-play'"></a>
-<div class="episode-data">
-  <span class="show-name">
-    {{ showName() }}
-  </span>
-  <span class="episode-name">
-    {{ episodeName() }}
-  </span>
+<div class="player">
+	<a ng-click="playPause()" class="play-pause glyphicon" ng-class="isPlaying() ? 'glyphicon-pause' : 'glyphicon-play'"></a>
+	<div class="episode-data">
+	  <span class="show-name">
+	    {{ showName() }}
+	  </span>
+	  <span class="episode-name">
+	    {{ episodeName() }}
+	  </span>
+	</div>
 </div>
-<a ng-click="autoPlay()">{{streamExists() ? "Switch to Live Stream" : "Play Random Episode"}}</a>
-<audio id='audio-player' src='#' type='audio/mp3' preload='none'></audio>
+<div class="player-selector">
+	<a ng-click="autoPlay()">{{streamExists() ? "Switch to Live Stream" : "Play Random Episode"}}</a>
+	<audio id='audio-player' src='#' type='audio/mp3' preload='none'></audio>
+</div>
 
