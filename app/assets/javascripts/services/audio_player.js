@@ -28,6 +28,7 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
 
   this.checkForLivestream = function(onError) {
     console.log('check For Livestream')
+    //console.log(BelAir.livestreamURL)
     self.setSource(livestream);
     player.media.load();
     player.media.onerror = onError;
@@ -43,8 +44,10 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     $http.get('/api/episodes/random').then(onLoad, onError);
   };
 
-  this.onRandomEpisodeLoad = function(episode) {
-    self.setSource(episode);
+  this.onRandomEpisodeLoad = function(response) {
+    player.pause();
+    self.setPaused()
+    self.setSource(response.data.episode);
   };
 
   this.onRandomEpisodeError = function(error) {
@@ -71,48 +74,5 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     player.play();
     self.setPlaying();
   };
-
-  //this.setSource = function setSource(episode){
-      //this.episode = episode
-      //player.setSrc(episode.file_url);
-  //}
-
-  //this.play = function play(episode, successCallback, errorCallback) {
-    //if (episode) {
-      //audio.setSource(episode)
-    //}
-    //if (errorCallback) {
-      //player.media.onerror = errorCallback;
-    //}
-    //if (successCallback) {
-      //player.media.onsuccess = successCallback;
-    //}
-
-    //player.play();
-
-    //this.playing = true;
-  //};
-
-  //this.getRandomEpisode = function(onRandomEpisodeLoad) {
-    //$http.get('/api/episodes/random').then(onRandomEpisodeLoad);
-    //$http.get('/api/episodes/random').then(function (response) {
-      //audio.setSource(response.data.episode);
-    //});
-  //};
-
-  //this.pauseAudioAndSetValueOfThing = function() {
-    //audio.pause();
-    //audio.stream_exists = true;
-  //};
-
-  //this.autoPlay = function autoPlay() {
-    //audio.play(livestream, this.pauseAudio, this.getAndPlayAndPauseRandomEpisode);
-  //};
-
-  //this.pause = function pause() {
-    //player.pause();
-    //this.playing = false;
-  //}
-
 
 }]);
