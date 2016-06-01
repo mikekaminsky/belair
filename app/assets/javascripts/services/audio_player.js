@@ -23,6 +23,8 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
 
   this.loadNewMedia = function() {
     console.log('load New Meida')
+    player.pause();
+    self.setPaused()
     self.checkForLivestream(self.onLivestreamError);
   };
 
