@@ -239,6 +239,24 @@ a {
 .schedule-page {
 	background: $pink;
 
+	/* calendar */
+	#gcf-simple {
+		margin: 2em;
+
+		.gcf-header-block {
+			display: none;
+		}
+
+		.gcf-item-block {
+			width: 14%;
+			display: inline-block;
+			margin-bottom: 2em;
+			.gcf-item-location, .gcf-item-description {
+				display: none;
+			}
+		}
+	}
+
 	.responsive-iframe-container {
 	    position: relative;
 	    margin: 1em;
@@ -421,18 +439,7 @@ a {
 
 }
 
-/* calendar */
-#gcf-simple {
-	.gcf-header-block {
-		display: none;
-	}
 
-	.gcf-item-block {
-		.gcf-item-location {
-			display: none;
-		}
-	}
-}
 
 /* admin */
 .admin-panel {
