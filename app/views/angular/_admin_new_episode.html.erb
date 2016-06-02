@@ -1,25 +1,32 @@
-<h1>Create New Episode: {{ show.name }}</h1>
-<p ng-repeat="error in errors" style="color: red;">
-  {{ error }}
-</p>
-<form>
-  <p>
-    <label>Name</label>
-    <input ng-model="episode.name"/>
-  <p/>
-  <p>
-    <label>Air Date</label>
-    <input ng-model="episode.air_date"/>
-  <p/>
-  <p>
-    <button ng-hide="fileUpload" ngf-select="fileSelected($file)">
-      {{ fileName || episode.file_url || "Choose File"}}
-    </button>
-    <span ng-show="fileUpload">
-      Upload progress: {{ fileUpload.percentage }}%
-    </span>
-  <p/>
-  <button ng-click="saveEpisode()">Save!</button>
-</form>
+<div class="admin-panel">
+  <h1>Create New Episode: {{ show.name }}</h1>
+  <p ng-repeat="error in errors" style="color: red;">
+    {{ error }}
+  </p>
+  <div class="action">
+    <form>
+      <p>
+        <label>Name</label>
+        <input ng-model="episode.name"/>
+      <p/>
+      <p>
+        <label>Air Date</label>
+        <input ng-model="episode.air_date"/>
+      <p/>
+      <p>
+        <button ng-hide="fileUpload" ngf-select="fileSelected($file)">
+          {{ fileName || episode.file_url || "Choose File"}}
+        </button>
+        <span ng-show="fileUpload">
+          Upload progress: {{ fileUpload.percentage }}%
+        </span>
+      <p/>
+      <button ng-click="saveEpisode()">Save!</button>
+    </form>
+  </div>
 
-<a ng-href="/#/admin/shows/{{show.id}}"><h5>{{ show.name }}</h5></a>
+  <div class="action back-link">
+    <h4><a ng-href="/#/admin/shows/{{show.id}}">&#8592; Back to {{ show.name }}</a></h4>
+  </div>
+
+</div>

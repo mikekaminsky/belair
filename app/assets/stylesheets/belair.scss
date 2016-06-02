@@ -21,6 +21,8 @@
 
 body {
 	font-family: 'HKGrotesk Regular';
+	letter-spacing: 0.5pt;
+	font-size: 15px;
 }
 
 h1, h2, h3 {
@@ -34,7 +36,7 @@ a {
 }
 
 .header {
-	min-height: 110px;
+	min-height: 180px;
 
 	.menu-button {
 		border: none;
@@ -93,6 +95,16 @@ a {
 	}
 }
 
+.navbar-default {
+	background: #fff;
+}
+
+.modal-body {
+	div {
+		margin: 0.5em 0;
+	}
+}
+
 .content {
 	position: relative;
 }
@@ -125,8 +137,8 @@ a {
 	}
 
 	.show-info {
-		border: 2px solid black;
-		margin: 1em;
+		border: 4px solid black;
+		margin: 1.5em;
 		padding: 1em;
 		background: white;
 	}
@@ -169,17 +181,19 @@ a {
 	}
 }
 
+
+
 .show-page-container {
 	background-size: cover;
 	height: calc(100vh - 8.5em);
-	overflow: scroll;
+	overflow: hidden;
 
 	.episodes,
 	.show-info {
 		margin: 1em 0;
-		padding: 1em;
+		padding: 1em 2em 2em 2em;
 		background: white;
-		border: 2px solid black;
+		border: 4px solid black;
 	}
 
 	.episodes {
@@ -223,7 +237,25 @@ a {
 }
 
 .schedule-page {
-	background: $green;
+	background: $pink;
+
+	/* calendar */
+	#gcf-simple {
+		margin: 2em;
+
+		.gcf-header-block {
+			display: none;
+		}
+
+		.gcf-item-block {
+			width: 14%;
+			display: inline-block;
+			margin-bottom: 2em;
+			.gcf-item-location, .gcf-item-description {
+				display: none;
+			}
+		}
+	}
 
 	.responsive-iframe-container {
 	    position: relative;
@@ -306,7 +338,7 @@ a {
 @media (max-width: 767px) {
 	.home .show {
 		.show-content {
-			margin: 1em;
+			margin: 1.5em;
 			border: 2px solid black;
 		}
 
@@ -343,8 +375,8 @@ a {
 			padding-top: 0;
 
 			.show-content {
-				border: 2px solid black;
-				margin: 1em;
+				border: 4px solid black;
+				margin: 2em;
 				height: 21em;
 			}
 
@@ -363,7 +395,7 @@ a {
 
 			.show-name {
 				font-size: 4em;
-				margin: 3rem 0;
+				margin: 2rem 0 3rem 0;
 			}
 		}
 
@@ -371,7 +403,7 @@ a {
 		&:nth-child(3) {
 			.show-img {
 				float: left;
-				border-right: 2px solid black;
+				border-right: 4px solid black;
 			}
 
 			.show-info {
@@ -382,7 +414,7 @@ a {
 		&:nth-child(2) {
 			.show-img {
 				float: right;
-				border-left: 2px solid black;
+				border-left: 4px solid black;
 			}
 
 			.show-info {
@@ -405,4 +437,57 @@ a {
 		height: 32em;
 	}
 
+}
+
+
+
+/* admin */
+.admin-panel {
+	background: $grey;
+	padding: 2em;
+
+	.title {
+		font-size: 2em;
+		color: #fff;
+		padding: 0.5em;
+		text-align: center;
+		background: black;
+	    margin: -1em -1em 1em -1em;
+	}
+
+	.back-link {
+		text-align: center;
+	}
+
+	.action {
+		padding-bottom: 3em;
+	}
+
+	h3 {
+		//text-align: center;
+	}
+
+	.show-img {
+		img {
+			width: 500px;
+		}
+	}
+
+	input, textarea {
+		width: 100%;
+		padding: 0.5em;
+	}
+
+	textarea {
+		height: 100px;
+	}
+
+	button {
+		background: #000;
+		color: #fff;
+		font-size: 1.5em;
+		font-weight: bold;
+		padding: 1em;
+		border: none;
+	}
 }
