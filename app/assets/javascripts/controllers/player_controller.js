@@ -21,8 +21,8 @@ belAir.controller('PlayerController', ['AudioPlayer', '$scope', function(AudioPl
     return AudioPlayer.stream_exists;
   }
 
-  $scope.loadNewMedia = function streamExists() {
-    return AudioPlayer.loadNewMedia();
+  $scope.handlePlayerToggle = function handlePlayerToggle() {
+    AudioPlayer.handlePlayerToggle();
   }
 
 }])
