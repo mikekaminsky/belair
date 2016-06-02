@@ -5,6 +5,7 @@ class Show < ActiveRecord::Base
   validates :image_url, presence: true
   validates :name, presence: true
   validates :description, presence: true
+  validates :last_air_date, presence: true
 
   def self.search(search_string)
     if search_string
@@ -12,6 +13,11 @@ class Show < ActiveRecord::Base
     else
       Show.all
     end
+  end
+
+  def calculate_last_air_date
+    self.last_air_date = episodes.pluck(:air_date).max
+    save!
   end
 
 end
