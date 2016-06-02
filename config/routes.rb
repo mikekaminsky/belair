@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
     get 'livestream' => 'application#livestream'
   end
+
+  get '/archive/*path' => 'application#old_site'
 end
