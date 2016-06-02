@@ -5,6 +5,9 @@ belAir.factory('Shows', ['$http', function ($http) {
     index: function (params) {
       return $http.get(url, {params: params});
     },
+    adminIndex: function (params) {
+      return $http.get('/api/admin_shows');
+    },
     show: function (id) {
       return $http.get(url + id);
     },

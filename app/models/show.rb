@@ -16,8 +16,8 @@ class Show < ActiveRecord::Base
   end
 
   def calculate_last_air_date
-    self.last_air_date = episodes.pluck(:air_date).max
-    save!
+    self.last_air_date = episodes.pluck(:air_date).select(&:present?).max
+    save
   end
 
 end
