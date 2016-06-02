@@ -71,8 +71,10 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     self.play();
   };
 
-  this.handlePlayerToggle = function() {
-    if (self.stream_exists){
+
+
+  this.handlePlayerToggle = function(stream) {
+    if (stream){
       self.checkForLivestream()
       self.pause();
     } else {
