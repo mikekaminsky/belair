@@ -7,6 +7,10 @@
     {{ episodeName() }}
   </span>
 </div>
-<a ng-click="handlePlayerToggle()">{{streamExists() ? "Switch to Live Stream" : "Play Random Episode"}}</a>
+<div class="source-selector">
+	<div class="source-option" ng-class="{ 'selected-source': !streamSelected() }" ng-click="handlePlayerToggle()">Random</div>
+	<div class="source-option" ng-if="streamExists()" ng-class="{ 'selected-source': streamSelected() }" ng-class="handlePlayerToggle()">On Air RN</div>
+<!-- 	<a ng-click="handlePlayerToggle()">{{streamExists() ? "Switch to Live Stream" : "Play Random Episode"}}</a>
+ --></div>
 <audio id='audio-player' src='#' type='audio/mp3' preload='none'></audio>
 

@@ -41,6 +41,34 @@ ba-player {
     text-decoration: none;
   }
 
+  .source-selector {
+    position: absolute;
+    right: 0;
+    border: 2px solid $pink;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    margin-right: 1em;
+    color: $pink;
+    height: 32px;
+    line-height: 32px;
+    font-size: 1.125em;
+    overflow: hidden;
+
+    .source-option {
+      display: inline-block;
+      text-align: center;
+      text-transform: uppercase;
+      width: 7em;
+      cursor: pointer;
+    }
+
+    .selected-source {
+      background: $pink;
+      color: white;
+    }
+  }
+
   .mejs-container {
     display: none;
   }

@@ -58,7 +58,7 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     player.setSrc(episode.file_url);
   };
 
-  this.playPause = function playPause() {
+  this.playPause = function() {
     if (self.playing) {
       self.pause();
     } else {
@@ -71,7 +71,7 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     self.play();
   };
 
-  this.handlePlayerToggle = function handlePlayerToggle() {
+  this.handlePlayerToggle = function() {
     if (self.stream_exists){
       self.checkForLivestream()
       self.pause();
