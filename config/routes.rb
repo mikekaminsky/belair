@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :s3_policies, only: [:new]
 
     get 'livestream' => 'application#livestream'
+    get 'admin_shows' => 'shows#admin_index'
   end
 
   get '/archive/*path' => 'application#old_site'

@@ -12,7 +12,14 @@ class ShowsController < ApplicationController
   end
 
   def index
-    render json: Show.search(params[:query]).order("updated_at DESC")
+    render json: Show.search(params[:query])
+      .where("last_air_date IS NOT NULL")
+      .order("last_air_date DESC")
+  end
+
+  def admin_index
+    render json: Show.search(params[:query])
+      .order("last_air_date DESC")
   end
 
   def show
