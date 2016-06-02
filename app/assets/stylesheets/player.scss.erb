@@ -3,8 +3,9 @@
 
 ba-player {
   display: flex;
-  height: 48px;
+  height: 84px;
   padding: 8px 0;
+  margin-top: 30px;
 
 
   .episode-data {
@@ -14,14 +15,14 @@ ba-player {
     .show-name {
       display: block;
       font-family: 'HKGrotesk Bold';
-      font-size: 16px;
-      line-height: 16px;
+     // font-size: 16px;
+      //line-height: 16px;
     }
 
     .episode-name {
       display: block;
-      font-size: 12px;
-      line-height: 22px;
+      //font-size: 12px;
+      //line-height: 22px;
     }
   }
 
@@ -39,6 +40,34 @@ ba-player {
     border: 2px black solid;
     color: black;
     text-decoration: none;
+  }
+
+  .source-selector {
+    position: absolute;
+    right: 0;
+    border: 2px solid $pink;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    margin-right: 1em;
+    color: $pink;
+    height: 32px;
+    line-height: 32px;
+    font-size: 1.125em;
+    overflow: hidden;
+
+    .source-option {
+      display: inline-block;
+      text-align: center;
+      text-transform: uppercase;
+      width: 7em;
+      cursor: pointer;
+    }
+
+    .selected-source {
+      background: $pink;
+      color: white;
+    }
   }
 
   .mejs-container {
