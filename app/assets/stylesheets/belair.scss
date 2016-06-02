@@ -144,7 +144,8 @@ a {
 	}
 
 	.show-description {
-		max-height: 4.2em;
+		max-height: 2.8em;
+		min-height: 2.8em;
 	}
 
 	&:nth-child(3n+1) {
