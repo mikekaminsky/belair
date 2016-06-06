@@ -330,7 +330,7 @@ a {
 
 		&.about-img-3 {
 			background-image: url('https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/12805922_3631556672258_7647726852073508736_n.jpg?oh=b8450e23e3d63a7ea5aecac7e213d218&oe=57DED8C5');
-			background-position: top;
+			background-position: bottom;
 		}
 	}
 }
@@ -364,7 +364,7 @@ a {
 	}
 
 	.about-page .about-img {
-		height: 18em;
+		height: 13em;
 	}
 }
 
@@ -431,11 +431,15 @@ a {
 			right: 1em;
 		}
 	}
+
+	.about-page .about-img {
+		height: 19.5em;
+	}
 }
 
 @media (min-width: 1024px) {
 	.about-page .about-img {
-		height: 32em;
+		height: 28em;
 	}
 
 }
