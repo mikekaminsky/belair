@@ -15,7 +15,7 @@ belAir.controller('AdminNewEpisodeController', ['Attachments', 'Episodes', 'Show
       if (response.data.errors) {
         $scope.errors = response.data.errors
       } else {
-        $location.path('/admin/show/' + showID).replace();
+        $location.path('/admin/shows/' + showID).replace();
       }
     });
   }

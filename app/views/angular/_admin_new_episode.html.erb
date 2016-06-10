@@ -11,7 +11,7 @@
       <p/>
       <p>
         <label>Air Date</label>
-        <input ng-model="episode.air_date"/>
+        <input ng-model="episode.air_date" placeholder="MM-DD-YYYY"/>
       <p/>
       <p>
         <button ng-hide="fileUpload" ngf-select="fileSelected($file)">
@@ -20,6 +20,7 @@
         <span ng-show="fileUpload">
           Upload progress: {{ fileUpload.percentage }}%
         </span>
+        <span ng-hide="fileUpload">
       <p/>
       <button ng-click="saveEpisode()">Save!</button>
     </form>
