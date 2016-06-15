@@ -5,7 +5,6 @@ class Show < ActiveRecord::Base
   validates :image_url, presence: true
   validates :name, presence: true
   validates :description, presence: true
-  validates :last_air_date, presence: true
 
   def self.search(search_string)
     if search_string
