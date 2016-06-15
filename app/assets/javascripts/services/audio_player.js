@@ -49,6 +49,11 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     self.pause();
   };
 
+  this.playOnLoad = function(response) {
+    self.setSource(response.data.episode);
+    self.play();
+  };
+
   this.onRandomEpisodeError = function(error) {
     console.log('Could not find a random episode.')
   };
@@ -76,9 +81,9 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
   this.handlePlayerToggle = function(stream) {
     if (stream){
       self.checkForLivestream()
-      self.pause();
+      self.play();
     } else {
-      self.getRandomEpisode(self.onRandomEpisodeLoad, self.onRandomEpisodeError);
+      self.getRandomEpisode(self.playOnLoad, self.onRandomEpisodeError);
     }
   };
 
