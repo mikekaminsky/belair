@@ -80,7 +80,7 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
 
   this.handlePlayerToggle = function(stream) {
     if (stream){
-      self.checkForLivestream()
+      self.checkForLivestream();
       self.play();
     } else {
       self.getRandomEpisode(self.playOnLoad, self.onRandomEpisodeError);
