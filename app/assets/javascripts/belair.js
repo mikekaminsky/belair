@@ -38,6 +38,8 @@ belAir.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
     controller: 'ShowsController',
     templateUrl: 'shows.html'
   }).otherwise({ redirectTo: '/'});
+
+  $locationProvider.html5Mode(true);
 }]);
 
 _gCalFlow_debug = true;
