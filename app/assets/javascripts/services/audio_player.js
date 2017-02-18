@@ -1,6 +1,6 @@
 belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
   var self = this;
-  self.stream_exists = true;
+  self.stream_exists = false;
 
   var livestream = {
     file_url: BelAir.livestreamURL,
@@ -60,6 +60,7 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
 
   this.setSource = function(episode) {
     self.episode = episode;
+    self.stream_exists = episode.file_url == BelAir.livestreamURL;
     player.setSrc(episode.file_url);
   };
 
@@ -76,7 +77,9 @@ belAir.service('AudioPlayer', ['$http', function AudioPlayerService($http) {
     self.play();
   };
 
-
+  this.streamExists = function() {
+    return self.stream_exists;
+  }
 
   this.handlePlayerToggle = function(stream) {
     if (stream){
